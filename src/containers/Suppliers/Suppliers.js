@@ -1,15 +1,30 @@
 import React, {Component, PropTypes} from 'react';
 import { Grid, Row, Col, Panel } from 'react-bootstrap';
 import {connect} from 'react-redux';
+import * as supplierActions from 'redux/modules/suppliers';
+import {isLoaded, filter as loadSuppliers} from 'redux/modules/suppliers';
 import DocumentMeta from 'react-document-meta';
 import {initialize} from 'redux-form';
 import config from '../../config';
 import { SupplierTableList, SupplierSearchForm } from '../../components';
 
+@connectData(null, fetchDataDeferred)
 @connect(
-  () => ({}),
-  {initialize})
+  state => ({
+    list: state.suppliers.data,
+    error: state.suppliers.error,
+    loading: state.suppliers.loading
+  }),
+  {...supplierActions, initializeWithKey })
 export default class Supplier extends Component {
+  static propTypes = {
+    list: PropTypes.array,
+    error: PropTypes.string,
+    loading: PropTypes.bool,
+    editing: PropTypes.object.isRequired,
+    load: PropTypes.func.isRequired,
+    editStart: PropTypes.func.isRequired
+  }
   static propTypes = {
     initialize: PropTypes.func.isRequired,
     params: PropTypes.object

@@ -1,11 +1,11 @@
 const LOAD = 'suppliers/LOAD';
-const LOAD_SUCCESS = 'suplliers/LOAD_SUCCESS';
-const LOAD_FAIL = 'suplliers/LOAD_FAIL';
-const EDIT_START = 'suplliers/EDIT_START';
-const EDIT_STOP = 'suplliers/EDIT_STOP';
-const SAVE = 'suplliers/SAVE';
-const SAVE_SUCCESS = 'suplliers/SAVE_SUCCESS';
-const SAVE_FAIL = 'suplliers/SAVE_FAIL';
+const LOAD_SUCCESS = 'suppliers/LOAD_SUCCESS';
+const LOAD_FAIL = 'suppliers/LOAD_FAIL';
+const EDIT_START = 'suppliers/EDIT_START';
+const EDIT_STOP = 'suppliers/EDIT_STOP';
+const SAVE = 'suppliers/SAVE';
+const SAVE_SUCCESS = 'suppliers/SAVE_SUCCESS';
+const SAVE_FAIL = 'suppliers/SAVE_FAIL';
 
 const initialState = {
   loaded: false,
@@ -86,10 +86,10 @@ export function isLoaded(globalState) {
   return globalState.suppliers && globalState.suppliers.loaded;
 }
 
-export function load() {
+export function filter(term) {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('/suppliers/filter/param1') // params not used, just shown as demonstration
+    promise: (client) => client.post('/supplier/filter/', {title: term}) // params not used, just shown as demonstration
   };
 }
 
@@ -97,7 +97,7 @@ export function save(widget) {
   return {
     types: [SAVE, SAVE_SUCCESS, SAVE_FAIL],
     id: widget.id,
-    promise: (client) => client.post('/suppliers/save', {
+    promise: (client) => client.post('/supplier/save', {
       data: widget
     })
   };
