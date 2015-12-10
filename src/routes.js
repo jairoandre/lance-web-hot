@@ -4,11 +4,11 @@ import { isLoaded as isAuthLoaded, load as loadAuth } from 'redux/modules/auth';
 import {
     App,
     Chat,
-    Home,
     Widgets,
     About,
     Login,
     LoginSuccess,
+    Suppliers,
     Survey,
     NotFound,
   } from 'containers';
@@ -19,7 +19,7 @@ export default (store) => {
       const { auth: { user }} = store.getState();
       if (!user) {
         // oops, not logged in, so can't be here!
-        replaceState(null, '/');
+        replaceState(null, 'login');
       }
       cb();
     }
@@ -37,19 +37,20 @@ export default (store) => {
   return (
     <Route path="/" component={App}>
       { /* Home (main) route */ }
-      <IndexRoute component={Home}/>
+      <IndexRoute component={Login}/>
 
       { /* Routes requiring login */ }
       <Route onEnter={requireLogin}>
+        <Route path="about" component={About}/>
         <Route path="chat" component={Chat}/>
         <Route path="loginSuccess" component={LoginSuccess}/>
+        <Route path="suppliers" component={Suppliers}/>
+        <Route path="survey" component={Survey}/>
+        <Route path="widgets" component={Widgets}/>
       </Route>
 
       { /* Routes */ }
-      <Route path="about" component={About}/>
       <Route path="login" component={Login}/>
-      <Route path="survey" component={Survey}/>
-      <Route path="widgets" component={Widgets}/>
 
       { /* Catch all route */ }
       <Route path="*" component={NotFound} status={404} />

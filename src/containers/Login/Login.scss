@@ -1,3 +1,26 @@
+.loginContainer {
+    width: 400px;
+    padding: 60px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: #D9D9D9;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+    .logo {
+      text-align: center;
+
+      img {
+        width: 200px;
+      }
+
+      p {
+        color: #233F70;
+        font-weight: bold;
+        font-size: 25px;
+      }
+    }
+}
+
 .loginPage {
   input {
     padding: 5px 10px;
@@ -5,9 +28,6 @@
     border: 1px solid #ccc;
   }
   form {
-    margin: 30px 0;
-    :global(.btn) {
-      margin-left: 10px;
-    }
+    margin: 30px 0;    
   }
 }

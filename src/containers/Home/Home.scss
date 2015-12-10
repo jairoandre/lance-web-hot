@@ -6,21 +6,19 @@
   }
 }
 .masthead {
-  background: #2d2d2d;
   padding: 40px 20px;
   color: white;
   text-align: center;
   .logo {
-    $size: 200px;
+    $size: 350px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
     margin: auto;
-    height: $size;
+    height: $size / 2;
     width: $size;
-    border-radius: $size / 2;
-    border: 1px solid $cyan;
-    box-shadow: inset 0 0 10px $cyan;
     vertical-align: middle;
     p {
-      line-height: $size;
+      line-height: $size / 2;
       margin: 0px;
     }
     img {
@@ -29,11 +27,11 @@
     }
   }
   h1 {
-    color: $cyan;
+    color: #451;
     font-size: 4em;
   }
   h2 {
-    color: #ddd;
+    color: #111;
     font-size: 2em;
     margin: 20px;
   }
