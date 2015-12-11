@@ -1,14 +1,14 @@
 {
-  "name": "react-redux-universal-hot-example",
-  "description": "Example of an isomorphic (universal) webapp using react redux and hot reloading",
-  "author": "Erik Rasmussen <rasmussenerik@gmail.com> (http://github.com/erikras)",
+  "name": "lance-web",
+  "description": "Sistema de lançamento de receitas do Vitória Apart Hosbital",
+  "author": "Jairo André  <jairoandre@gmail.com> (http://github.com/jairoandre)",
   "license": "MIT",
-  "version": "0.9.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/erikras/react-redux-universal-hot-example"
   },
-  "homepage": "https://github.com/erikras/react-redux-universal-hot-example",
+  "homepage": "https://github.com/jairoandre/lance-web",
   "keywords": [
     "react",
     "isomorphic",
@@ -44,7 +44,7 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
-        "PORT": 8080,
+        "PORT": 8000,
         "APIPORT": 3030
       }
     },
@@ -114,8 +114,6 @@
     "scroll-behavior": "^0.3.0",
     "serialize-javascript": "^1.1.2",
     "serve-favicon": "^2.3.0",
-    "socket.io": "^1.3.7",
-    "socket.io-client": "^1.3.7",
     "superagent": "^1.4.0",
     "url-loader": "^0.5.7",
     "webpack-isomorphic-tools": "^2.2.18"

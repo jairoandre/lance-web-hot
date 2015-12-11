@@ -18,7 +18,7 @@ export default function load(req) {
     // make async call to database
     setTimeout(() => {
       if (Math.random() < 0.33) {
-        reject('Requisição falhou!' + req.title);
+        reject('Requisição falhou!');
       } else {
         resolve(loadSuppliers(req));
       }
