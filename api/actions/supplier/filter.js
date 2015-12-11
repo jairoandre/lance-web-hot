@@ -1,7 +1,7 @@
 const initialSuppliers = [
   {id: 1, title: 'Clínica UTIM', supplierCode: 7},
-  {id: 2, color: 'Perinatal', supplierCode: 23},
-  {id: 3, color: 'Oncologia', supplierCode: 223}
+  {id: 2, title: 'Perinatal', supplierCode: 23},
+  {id: 3, title: 'Oncologia', supplierCode: 223}
 ];
 
 export function filterSuppliers(req) {

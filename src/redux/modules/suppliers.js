@@ -1,11 +1,11 @@
-const LOAD = 'suppliers/LOAD';
-const LOAD_SUCCESS = 'suppliers/LOAD_SUCCESS';
-const LOAD_FAIL = 'suppliers/LOAD_FAIL';
-const EDIT_START = 'suppliers/EDIT_START';
-const EDIT_STOP = 'suppliers/EDIT_STOP';
-const SAVE = 'suppliers/SAVE';
-const SAVE_SUCCESS = 'suppliers/SAVE_SUCCESS';
-const SAVE_FAIL = 'suppliers/SAVE_FAIL';
+const LOAD = 'lance-web/suppliers/LOAD';
+const LOAD_SUCCESS = 'lance-web/suppliers/LOAD_SUCCESS';
+const LOAD_FAIL = 'lance-web/suppliers/LOAD_FAIL';
+const EDIT_START = 'lance-web/suppliers/EDIT_START';
+const EDIT_STOP = 'lance-web/suppliers/EDIT_STOP';
+const SAVE = 'lance-web/suppliers/SAVE';
+const SAVE_SUCCESS = 'lance-web/suppliers/SAVE_SUCCESS';
+const SAVE_FAIL = 'lance-web/suppliers/SAVE_FAIL';
 
 const initialState = {
   loaded: false,
@@ -90,6 +90,13 @@ export function filter(term) {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
     promise: (client) => client.post('/supplier/filter/', {title: term}) // params not used, just shown as demonstration
+  };
+}
+
+export function load() {
+  return {
+    types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
+    promise: (client) => client.get('/supplier/load') // params not used, just shown as demonstration
   };
 }
 
