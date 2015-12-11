@@ -18,7 +18,7 @@ export default function filter(req) {
     // make async call to database
     setTimeout(() => {
       if (Math.random() < 0.33) {
-        reject('Requisição falhou!');
+        reject('Requisição falhou!' + req.title);
       } else {
         resolve(filterSuppliers(req));
       }

@@ -4,38 +4,37 @@ import {connect} from 'react-redux';
 import * as supplierActions from 'redux/modules/suppliers';
 import {isLoaded, filter as loadSuppliers} from 'redux/modules/suppliers';
 import DocumentMeta from 'react-document-meta';
-import {initialize} from 'redux-form';
+import {initializeWithKey} from 'redux-form';
 import config from '../../config';
-import { SupplierTableList, SupplierSearchForm } from '../../components';
+import connectData from 'helpers/connectData';
+import { SupplierTableList } from '../../components';
+
+
+function fetchDataDeferred(getState, dispatch) {
+  if (!isLoaded(getState())) {
+    return dispatch(loadSuppliers('teste'));
+  }
+}
 
 @connectData(null, fetchDataDeferred)
 @connect(
   state => ({
     list: state.suppliers.data,
     error: state.suppliers.error,
-    loading: state.suppliers.loading
+    loading: state.suppliers.loading,
   }),
   {...supplierActions, initializeWithKey })
 export default class Supplier extends Component {
   static propTypes = {
     list: PropTypes.array,
-    error: PropTypes.string,
+    error: PropTypes.object,
     loading: PropTypes.bool,
-    editing: PropTypes.object.isRequired,
-    load: PropTypes.func.isRequired,
-    editStart: PropTypes.func.isRequired
+    dispatch: PropTypes.func,
+    status: PropTypes.string,
+    statusText: PropTypes.string
   }
-  static propTypes = {
-    initialize: PropTypes.func.isRequired,
-    params: PropTypes.object
-  }
-
-  handleSubmit = (data) => {
-    window.alert('Data submitted! ' + JSON.stringify(data));
-    this.props.initialize('survey', {});
-  }
-
   render() {
+    const {list} = this.props;
     return (
       <div className="container">
                 <DocumentMeta title={config.app.title + ': Clientes'}/>
@@ -49,19 +48,20 @@ export default class Supplier extends Component {
                                         <Col xs={ 12 }
                                              md={ 12 }
                                              sm={ 12 }
-                                             lg={ 12 }>
-                                            <SupplierSearchForm params={ this.props.params } />
-                                        </Col>
+                                             lg={ 12 }/>
                                     </Row>
-                                    <Row params={ this.props.params }>
+                                    <Row>
                                         <Col xs={ 12 }
                                              md={ 12 }
                                              sm={ 12 }
-                                             lg={ 12 }
-                                             params={ this.props.params }>
-                                            <SupplierTableList striped
-                                                               hover
-                                                               params={ this.props.params }/>
+                                             lg={ 12 }>
+                                             {list && list.length &&
+                                                <SupplierTableList
+                                                  striped
+                                                  hover
+                                                  list={list}/>
+                                              }
+                                              {!list && 'Lista vazia!'}
                                         </Col>
                                     </Row>
                                 </Grid>

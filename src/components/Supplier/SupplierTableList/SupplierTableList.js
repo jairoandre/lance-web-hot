@@ -6,7 +6,7 @@ import { SupplierListHeader, SupplierListRow } from '../';
 class SupplierTableList extends Component {
 
   static propTypes = {
-    list: PropTypes.object.isRequired
+    list: PropTypes.array.isRequired
   }
 
   constructor(props, content) {
