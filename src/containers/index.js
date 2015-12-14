@@ -6,4 +6,5 @@ export Login from './Login/Login';
 export LoginSuccess from './LoginSuccess/LoginSuccess';
 export Survey from './Survey/Survey';
 export Suppliers from './Suppliers/Suppliers';
+export SuppliersNew from './Suppliers/SuppliersNew';
 export NotFound from './NotFound/NotFound';

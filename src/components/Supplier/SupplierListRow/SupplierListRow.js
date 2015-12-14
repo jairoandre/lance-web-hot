@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-
-const {styles} = require('../../../theme/variables.scss');
+import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 class SupplierListRow extends Component {
 
@@ -10,7 +9,10 @@ class SupplierListRow extends Component {
 
   render() {
     const {item} = this.props;
-    console.log(styles);
+    const styles = require('../../../theme/common.scss');
+    const detailTooltip = <Tooltip id={'detailTooltip_' + item.id}><strong>Detalhar</strong></Tooltip>;
+    const editTooltip = <Tooltip id={'editTooltip_' + item.id}><strong>Editar</strong></Tooltip>;
+    const deleteTooltip = <Tooltip id={'deleteTooltip_' + item.id}><strong>Deletar</strong></Tooltip>;
     return (
       <tr>
         <td>
@@ -22,18 +24,22 @@ class SupplierListRow extends Component {
         <td>
             <span>{ item.supplierCode }</span>
         </td>
-        <td className="tdLinks">
-          <div className="table-list-actions">
+        <td className={styles.tdLinks}>
+          <OverlayTrigger placement="bottom" overlay={detailTooltip}>
             <a href={'detail/' + item.id}>
               <i className="fa fa-eye" ></i>
             </a>
+          </OverlayTrigger>
+          <OverlayTrigger placement="bottom" overlay={editTooltip}>
             <a href={'edit/' + item.id}>
              <i className="fa fa-edit" ></i>
             </a>
+          </OverlayTrigger>
+          <OverlayTrigger placement="bottom" overlay={deleteTooltip}>
             <a href={'delete/' + item.id}>
              <i className="fa fa-trash" ></i>
             </a>
-          </div>
+          </OverlayTrigger>
         </td>
       </tr>
     );

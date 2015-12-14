@@ -16,19 +16,20 @@ Frontend do sistema **Lance**.
 
 [npm-windows-upgrade](https://github.com/felixrieseberg/npm-windows-upgrade)
 
+> Para atualizar o npm (node package manager)
+
 ## Instalação
 
 ```bash
 npm install
 ```
+A primeira execução do `npm install` costuma ser demorada. Paciência. :)
 
 ## Executando servidor de desenvolvimento
 
 ```bash
 npm run dev
 ```
-A primeira execução do `npm install` costuma ser demorada. Paciência.
-
 ### Utilizando o Redux DevTools
 
 Essa ferramenta auxilia no acompanhamento do estado da aplicação:

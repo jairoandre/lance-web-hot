@@ -8,6 +8,7 @@ import {
     Login,
     LoginSuccess,
     Suppliers,
+    SuppliersNew,
     Survey,
     NotFound,
   } from 'containers';
@@ -43,6 +44,7 @@ export default (store) => {
         <Route path="about" component={About}/>
         <Route path="loginSuccess" component={LoginSuccess}/>
         <Route path="suppliers" component={Suppliers}/>
+        <Route path="suppliers/add" component={SuppliersNew}/>
         <Route path="survey" component={Survey}/>
         <Route path="widgets" component={Widgets}/>
       </Route>

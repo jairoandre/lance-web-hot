@@ -31,9 +31,9 @@ export default class SupplierSearchForm extends Component {
               <i className={refreshClassName}/> {' '} Filtrar
             </button>
             {'  '}
-            <button className="btn btn-primary" disabled={loading} onClick={this.handleClick}>
+            <a href="suppliers/add" className="btn btn-primary" disabled={loading}>
               <i className="fa fa-file"/> {' '} Novo cliente
-            </button>
+            </a>
           </Col>
         </Row>
       </Grid>

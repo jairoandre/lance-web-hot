@@ -3,7 +3,7 @@
 	[
 		{
 			"path": ".",
-			"folder_exclude_patterns": ["node_modules", "static/dist"]
+			"folder_exclude_patterns": ["node_modules", "src/dist"]
 		}
 	]
 }

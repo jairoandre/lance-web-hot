@@ -40,7 +40,6 @@ export default class Supplier extends Component {
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
                     {list && list.length && <SupplierTableList {...this.props}/>}
-                    {!list && 'Lista vazia!'}
                     </Col>
                   </Row>
                 </Grid>
