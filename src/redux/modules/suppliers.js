@@ -25,7 +25,7 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         loading: false,
         loaded: true,
-        data: action.result,
+        data: action.result.suppliers,
         error: null
       };
     case LOAD_FAIL:
@@ -89,7 +89,7 @@ export function isLoaded(globalState) {
 export function filter(term) {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.post('/supplier/filter/', {title: term}) // params not used, just shown as demonstration
+    promise: (client) => client.post('/supplier/filter/', {data: {title: term}}) // params not used, just shown as demonstration
   };
 }
 

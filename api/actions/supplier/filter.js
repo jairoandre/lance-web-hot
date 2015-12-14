@@ -1,27 +1,29 @@
-const initialSuppliers = [
-  {id: 1, title: 'Clínica UTIM', supplierCode: 7},
-  {id: 2, title: 'Perinatal', supplierCode: 23},
-  {id: 3, title: 'Oncologia', supplierCode: 223}
-];
-
-export function filterSuppliers(req) {
-  let suppliers = req.session.suppliers;
-  if (!suppliers) {
-    suppliers = initialSuppliers;
-    req.session.suppliers = suppliers;
-  }
-  return suppliers;
-}
+import 'isomorphic-fetch';
 
 export default function filter(req) {
-  return new Promise((resolve, reject) => {
-    // make async call to database
-    setTimeout(() => {
-      if (Math.random() < 0.33) {
-        reject('Requisição falhou!' + req.title);
-      } else {
-        resolve(filterSuppliers(req));
-      }
-    }, 1000); // simulate async load
-  });
+
+    const requestURL = 'http://localhost:8080/lance-api/suppliers/filter';
+
+    console.log(req.body);
+
+    return fetch(requestURL, {
+        method: 'post',
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(req.body)
+    }).then( response => {
+            console.log('Received response: ' + response);
+            console.log('Received response: ' + response.status);
+            console.log('Received response: ' + response.statusText);
+            if (response.status >= 200 && response.status < 300) {
+                return response;
+            } else {
+                var error = new Error(response.statusText);
+                error.response = response;
+                throw error;
+            }
+        }).then(response => { return response.json() });
+
 }

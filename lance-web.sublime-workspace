@@ -4,8 +4,12 @@
 		"selected_items":
 		[
 			[
-				"S",
-				"SupplierListRow"
+				"suppli",
+				"supplierActions"
+			],
+			[
+				"Suppli",
+				"SupplierSearchForm"
 			],
 			[
 				"Contract",
@@ -16,129 +20,6 @@
 	"buffers":
 	[
 		{
-			"file": "src/containers/App/App.js",
-			"settings":
-			{
-				"buffer_size": 3882,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/containers/Login/Login.scss",
-			"settings":
-			{
-				"buffer_size": 498,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/containers/Login/Login.js",
-			"settings":
-			{
-				"buffer_size": 1818,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/containers/Home/Home.js",
-			"settings":
-			{
-				"buffer_size": 695,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/containers/Home/Home.scss",
-			"settings":
-			{
-				"buffer_size": 808,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/containers/Suppliers/Suppliers.js",
-			"settings":
-			{
-				"buffer_size": 967,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/Supplier/SupplierTableList/SupplierTableList.js",
-			"settings":
-			{
-				"buffer_size": 1159,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-			"settings":
-			{
-				"buffer_size": 223,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/Supplier/index.js",
-			"settings":
-			{
-				"buffer_size": 284,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/index.js",
-			"settings":
-			{
-				"buffer_size": 495,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/Supplier/SupplierSearchForm/SupplierSearchForm.js",
-			"settings":
-			{
-				"buffer_size": 2464,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/Supplier/SupplierListRow/SupplierListRow.js",
-			"settings":
-			{
-				"buffer_size": 1499,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/jsfmt.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 442,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "import React, { Component, PropTypes } from 'react';\n\nclass SupplierListHeader extends Component {\n\n  constructor(props, content) {\n    super(props, content);\n  }\n\n  render() {\n    return (<thead {...this.props}>\n                    <tr>\n    <th>\n                            <span>Id</span>\n                        </th>\n                        <th>\n                            <span>Nome</span>\n                        </th>\n                        <th>\n                            <span>Código</span>\n                        </th>\n                        <th />\n                    </tr>\n                </thead>\n      );\n  }\n}\n\nexport default SupplierListHeader;\n",
-			"file": "src/components/Supplier/SupplierListHeader/SupplierListHeader.js",
-			"file_size": 715,
-			"file_write_time": 130942422567500602,
-			"settings":
-			{
-				"buffer_size": 666,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/WidgetForm/WidgetForm.js",
-			"settings":
-			{
-				"buffer_size": 3084,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/containers/App/App.scss",
 			"settings":
 			{
@@ -147,10 +28,29 @@
 			}
 		},
 		{
-			"file": "src/theme/variables.scss",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 488,
+				"buffer_size": 5392,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n	\"folders\":\n	[\n		{\n			\"path\": \".\",\n			\"folder_exclude_patterns\": [\"node_modules\"]\n		}\n	]\n}\n",
+			"file": "lance-web.sublime-project",
+			"file_size": 93,
+			"file_write_time": 130945653605887697,
+			"settings":
+			{
+				"buffer_size": 93,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/server.js",
+			"settings":
+			{
+				"buffer_size": 4011,
 				"line_ending": "Windows"
 			}
 		}
@@ -162,18 +62,10 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 191.0,
-		"last_filter": "install",
+		"height": 400.0,
+		"last_filter": "insta",
 		"selected_items":
 		[
-			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"remove pack",
-				"Package Control: Remove Package"
-			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -229,23 +121,45 @@
 	"expanded_folders":
 	[
 		"/C/Users/jairoportela/projects/lance/lance-web-hot",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierListHeader",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierListRow",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierSearchForm",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierTableList",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Survey"
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/App",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Home",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Widgets",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/helpers/__tests__"
 	],
 	"file_history":
 	[
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/package.json",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/routes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/api/api.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Widgets/Widgets.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/api/actions/supplier/load.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/redux/modules/suppliers.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/server.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/client.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Suppliers/Suppliers.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/api/actions/supplier/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierSearchForm/SupplierSearchForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Survey/Survey.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/helpers/connectData.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/lance-web.sublime-project",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierTableList/SupplierTableList.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/api/actions/supplier/filter.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierListRow/SupplierListRow.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/api/actions/supplier/update.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/api/actions/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/redux/modules/reducer.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/App/App.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierListHeader/SupplierListHeader.js",
+		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/jsfmt/jsfmt.sublime-settings",
+		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/jsfmt.sublime-settings",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/Supplier/SupplierSearchForm/action.js",
+		"/C/Users/jairoportela/projects/lance/lance-web-hot/.eslintrc",
 		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
 		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
 		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/theme/variables.scss",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/lance-web.sublime-project",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/App/App.scss",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Login/Login.scss",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Login/Login.js",
@@ -256,12 +170,8 @@
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Home/Home.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/bin/server.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/LoginForm/LoginForm.js",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/routes.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Home/Home.scss",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/App/App.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/SurveyForm/SurveyForm.js",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/server.js",
-		"/C/Users/jairoportela/projects/lance/lance-web-hot/package.json",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/components/FormField/FormField.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/config.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/package.json",
@@ -296,7 +206,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -311,9 +221,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"MiniInfoBar",
-			"InfoBar",
-			"GithubButton",
+			"LOAD",
+			"filter",
+			"Widgets",
+			"suppliers",
+			"load",
+			"form",
+			"loadSuppliers",
+			"color",
+			"filterWidgets",
+			"suppliers",
+			"suplliers",
+			"suppliers",
+			"widgets",
+			"Widgets",
+			"widgets",
+			"redux-example/widgets",
+			"redux-example",
+			"fetchin",
+			"bind",
+			"params={ this.props.params }",
+			"Survey",
+			"statusText",
+			"e",
 			"Survey",
 			"survey",
 			"Survey",
@@ -355,321 +285,16 @@
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/containers/App/App.js",
+					"file": "src/containers/App/App.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3882,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3633,
-								3601
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1424.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/containers/Login/Login.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 498,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								183,
-								183
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/containers/Login/Login.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1818,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1123,
-								1123
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 136.0,
-						"translation.y": 324.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/containers/Home/Home.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 695,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								282,
-								282
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/containers/Home/Home.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 808,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								224,
-								224
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/containers/Suppliers/Suppliers.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 967,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								86,
-								86
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/components/Supplier/SupplierTableList/SupplierTableList.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1159,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								827,
-								827
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								128,
-								128
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/components/Supplier/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 284,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								284,
-								284
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/components/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 495,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								495,
-								495
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/components/Supplier/SupplierSearchForm/SupplierSearchForm.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2464,
+						"buffer_size": 381,
 						"regions":
 						{
 						},
@@ -683,8 +308,7 @@
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -692,96 +316,59 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "src/components/Supplier/SupplierListRow/SupplierListRow.js",
+					"buffer": 1,
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1499,
+						"buffer_size": 5392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								998,
-								998
+								5266,
+								5266
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 108.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/jsfmt.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 442,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								442,
-								442
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"syntax": "Packages/Babel/JSON.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3102.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "src/components/Supplier/SupplierListHeader/SupplierListHeader.js",
+					"buffer": 2,
+					"file": "lance-web.sublime-project",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 666,
+						"buffer_size": 93,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								589,
-								589
+								93,
+								93
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Babel/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -791,20 +378,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "src/components/WidgetForm/WidgetForm.js",
-					"semi_transient": true,
+					"buffer": 3,
+					"file": "src/server.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3084,
+						"buffer_size": 4011,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								530,
-								530
+								453,
+								453
 							]
 						],
 						"settings":
@@ -814,71 +401,11 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "src/containers/App/App.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 381,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								319,
-								319
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "src/theme/variables.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 488,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								196,
-								196
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -886,7 +413,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 38.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -927,7 +454,7 @@
 	"project": "lance-web.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -936,6 +463,46 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"routes",
+				"src\\routes.js"
+			],
+			[
+				"supplier",
+				"src\\redux\\modules\\suppliers.js"
+			],
+			[
+				"suppliersearchform",
+				"src\\components\\Supplier\\SupplierSearchForm\\SupplierSearchForm.js"
+			],
+			[
+				"surve",
+				"src\\containers\\Survey\\Survey.js"
+			],
+			[
+				"survey",
+				"src\\containers\\Survey\\Survey.js"
+			],
+			[
+				"connectdata",
+				"src\\helpers\\connectData.js"
+			],
+			[
+				"suppliers.js",
+				"src\\redux\\modules\\suppliers.js"
+			],
+			[
+				"suppliersea",
+				"src\\components\\Supplier\\SupplierSearchForm\\SupplierSearchForm.js"
+			],
+			[
+				"searchform",
+				"src\\components\\Supplier\\SupplierSearchForm\\SupplierSearchForm.js"
+			],
+			[
+				"suppliertablelist",
+				"src\\components\\Supplier\\SupplierTableList\\SupplierTableList.js"
+			],
 			[
 				"login.scss",
 				"src\\containers\\Login\\Login.scss"
@@ -1009,7 +576,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 297.0,
+	"side_bar_width": 208.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -16,7 +16,7 @@ module.exports = Object.assign({
   apiPort: process.env.APIPORT,
   app: {
     title: 'Lance',
-    description: 'Sistema de gestão de receitas.',
+    description: 'Sistema de gestão de receitas',
     meta: {
       charSet: 'utf-8',
       property: {

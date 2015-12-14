@@ -22,12 +22,16 @@ export default class SupplierSearchForm extends Component {
     return (
       <Grid fluid>
         <Row>
-          <Col xs={ 10 } md={ 10 } sm={ 10 } lg={ 10 }>
+          <Col xs={ 8 } md={ 8 } sm={ 8 } lg={ 8 }>
             <Input id="name" ref="inputText" type="text" hasFeedback disabled={loading} placeholder="Nome do cliente..." />
           </Col>
-          <Col xs={ 2 } md={ 2 } sm={ 2 } lg={ 2 }>
+          <Col xs={ 4 } md={ 4 } sm={ 4 } lg={ 4 }>
             <button className="btn btn-success" disabled={loading} onClick={this.handleClick}>
               <i className={refreshClassName}/> {' '} Filtrar
+            </button>
+            {'  '}
+            <button className="btn btn-primary" disabled={loading} onClick={this.handleClick}>
+              <i className="fa fa-file"/> {' '} Novo cliente
             </button>
           </Col>
         </Row>
