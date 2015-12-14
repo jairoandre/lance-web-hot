@@ -4,7 +4,6 @@ import { IndexLink } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, NavBrand, Nav, NavItem, CollapsibleNav, NavDropdown } from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
-import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
 import { pushState } from 'redux-router';
 import connectData from 'helpers/connectData';
@@ -12,9 +11,6 @@ import config from '../../config';
 
 function fetchData(getState, dispatch) {
   const promises = [];
-  if (!isInfoLoaded(getState())) {
-    promises.push(dispatch(loadInfo()));
-  }
   if (!isAuthLoaded(getState())) {
     promises.push(dispatch(loadAuth()));
   }
@@ -59,9 +55,9 @@ export default class App extends Component {
       <div className={styles.app}>
         <DocumentMeta {...config.app}/>
         {user &&
-        <Navbar fixedTop toggleNavKey={0} inverse>
+        <Navbar fixedTop toggleNavKey={0}>
           <NavBrand>
-            <IndexLink to="/" activeStyle={{color: '#33e0ff'}}>
+            <IndexLink to="/">
               <div className={styles.brand}/>
               <span>{config.app.title}</span>
             </IndexLink>
@@ -69,7 +65,7 @@ export default class App extends Component {
 
           <CollapsibleNav eventKey={0}>
             <Nav navbar>
-              <NavDropdown id="dropdowCRUD" eventKey={1} title="Cadastro" inverse>
+              <NavDropdown id="dropdowCRUD" eventKey={1} title="Cadastro">
                 <LinkContainer to="/sectors">
                   <NavItem eventKey={1.0}>Setores</NavItem>
                 </LinkContainer>

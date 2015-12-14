@@ -7,25 +7,33 @@ import config from '../../config';
 import {Home} from '../';
 
 @connect(
-  state => ({user: state.auth.user}),
+  state => ({user: state.auth.user, loading: state.auth.loading}),
   authActions)
 export default class Login extends Component {
   static propTypes = {
     user: PropTypes.object,
+    loading: PropTypes.bool,
     login: PropTypes.func
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    event.stopPropagation();
     const input = this.refs.username.getInputDOMNode();
-    this.props.login(input.value);
+    const password = this.refs.password.getInputDOMNode();
+    this.props.login(input.value, password.value);
     input.value = '';
+    input.password = '';
   }
 
   render() {
-    const {user} = this.props;
+    const {user, loading} = this.props;
     const styles = require('./Login.scss');
     const logoImage = require('../Home/logo.png');
+    let refreshClassName = 'fa fa-sign-in';
+    if (loading) {
+      refreshClassName = 'fa fa-refresh fa-spin';
+    }
     return (
       <div>
         {!user &&
@@ -38,9 +46,9 @@ export default class Login extends Component {
             <hr/>
             <div>
               <form className="login-form form-group" onSubmit={this.handleSubmit}>
-                <Input type="text" label="Usuário" groupClassName="group-class" labelClassName="label-class" ref="username" placeholder="Digite seu nome de usuário"/>
-                <Input type="password" label="Senha" groupClassName="group-class" labelClassName="label-class" ref="password" placeholder="Digite sua senha"/>
-                <button className="btn btn-success btn-block" onClick={this.handleSubmit}><i className="fa fa-sign-in"/>{' '}Entrar
+                <Input type="text" disabled={loading} label="Usuário" groupClassName="group-class" labelClassName="label-class" ref="username" placeholder="Digite seu nome de usuário"/>
+                <Input type="password" disabled={loading} label="Senha" groupClassName="group-class" labelClassName="label-class" ref="password" placeholder="Digite sua senha"/>
+                <button className="btn btn-success btn-block" disabled={loading} onClick={this.handleSubmit}><i className={refreshClassName}/>{' '}Entrar
                 </button>
               </form>
             </div>

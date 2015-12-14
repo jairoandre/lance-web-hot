@@ -1,10 +1,17 @@
 @import "../../theme/variables.scss";
 
 .home {
-  dd {
-    margin-bottom: 15px;
-  }
+  position: relative;
+  padding: 30px 15px;
+  text-align: center;
+  color: rgba(255,255,255,.8);
+  background-color: #b84d45;
+  background-image: image-url("./bg.png");
+  margin-bottom: 40px;
+  font-size: 20px;
+  margin-top: -50px;
 }
+
 .masthead {
   padding: 40px 20px;
   color: white;
