@@ -15,6 +15,7 @@ export default class SupplierSearchForm extends Component {
 
   render() {
     const {loading} = this.props;
+    const styles = require('./SupplierSearchForm.scss');
     let refreshClassName = 'fa fa-refresh';
     if (loading) {
       refreshClassName += ' fa-spin';
@@ -22,10 +23,10 @@ export default class SupplierSearchForm extends Component {
     return (
       <Grid fluid>
         <Row>
-          <Col xs={ 8 } md={ 8 } sm={ 8 } lg={ 8 }>
+          <Col xs={ 6 } md={ 8 } sm={ 7 } lg={ 9 }>
             <Input id="name" ref="inputText" type="text" hasFeedback disabled={loading} placeholder="Nome do cliente..." />
           </Col>
-          <Col xs={ 4 } md={ 4 } sm={ 4 } lg={ 4 }>
+          <Col xs={ 6 } md={ 4 } sm={ 5 } lg={ 3 } className={styles.btnCol}>
             <button className="btn btn-success" disabled={loading} onClick={this.handleClick}>
               <i className={refreshClassName}/> {' '} Filtrar
             </button>

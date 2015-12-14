@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+const {styles} = require('../../../theme/variables.scss');
+
 class SupplierListRow extends Component {
 
   constructor(props, content) {
@@ -8,6 +10,7 @@ class SupplierListRow extends Component {
 
   render() {
     const {item} = this.props;
+    console.log(styles);
     return (
       <tr>
         <td>
@@ -19,7 +22,7 @@ class SupplierListRow extends Component {
         <td>
             <span>{ item.supplierCode }</span>
         </td>
-        <td>
+        <td className="tdLinks">
           <div className="table-list-actions">
             <a href={'detail/' + item.id}>
               <i className="fa fa-eye" ></i>
