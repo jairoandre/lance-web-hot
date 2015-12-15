@@ -4,17 +4,32 @@ import {connect} from 'react-redux';
 import {initialize} from 'redux-form';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
+import { pushState } from 'redux-router';
+import { save } from 'redux/modules/suppliers';
+
 import {SupplierForm} from 'components';
 
-@connect(() => ({}), {initialize})
+@connect(state => ({
+  saveError: state.suppliers.saveError,
+  loading: state.suppliers.loading
+}), {initialize, pushState, save})
 export default class SuppliersNew extends Component {
   static propTypes = {
-    initialize: PropTypes.func.isRequired
+    initialize: PropTypes.func.isRequired,
+    pushState: PropTypes.func.isRequired,
+    save: PropTypes.func.isRequired,
+    saveError: PropTypes.object,
+    loading: PropTypes.bool
   }
 
   handleSubmit = (data) => {
-    window.alert('Data submitted! ' + JSON.stringify(data));
-    this.props.initialize('survey', {});
+    this.props.save(data);
+    this.props.initialize('supplier', {});
+    if (this.props.saveError) {
+      console.log(this.props.saveError);
+    } else {
+      this.props.pushState(null, '/suppliers');
+    }
   }
 
   render() {

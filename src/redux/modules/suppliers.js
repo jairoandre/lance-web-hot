@@ -53,21 +53,16 @@ export default function reducer(state = initialState, action = {}) {
         }
       };
     case SAVE:
-      return state; // 'saving' flag handled by redux-form
-    case SAVE_SUCCESS:
-      const data = [...state.data];
-      data[action.result.id - 1] = action.result;
       return {
         ...state,
-        data: data,
-        editing: {
-          ...state.editing,
-          [action.id]: false
-        },
-        saveError: {
-          ...state.saveError,
-          [action.id]: null
-        }
+        loading: true,
+        saveError: null
+      };
+    case SAVE_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        saveError: null
       };
     case SAVE_FAIL:
       return typeof action.error === 'string' ? {
@@ -100,12 +95,12 @@ export function load() {
   };
 }
 
-export function save(widget) {
+export function save(supplier) {
   return {
     types: [SAVE, SAVE_SUCCESS, SAVE_FAIL],
-    id: widget.id,
+    id: supplier.id,
     promise: (client) => client.post('/supplier/save', {
-      data: widget
+      data: supplier
     })
   };
 }

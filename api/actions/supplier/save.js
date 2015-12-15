@@ -1,8 +1,8 @@
 import 'isomorphic-fetch';
 
-export default function filter(req) {
+export default function save(req) {
 
-    const requestURL = 'http://localhost:8080/lance-api/suppliers/filter';
+    const requestURL = 'http://localhost:8080/lance-api/suppliers/add';
 
     return fetch(requestURL, {
         method: 'post',

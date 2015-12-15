@@ -4,20 +4,20 @@ const join = (rules) => (value, data) => rules.map(rule => rule(value, data)).fi
 export function email(value) {
   // Let's not start a debate on email regex. This is just for an example app!
   if (!isEmpty(value) && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-    return 'Invalid email address';
+    return 'Email inválido';
   }
 }
 
 export function required(value) {
   if (isEmpty(value)) {
-    return 'Required';
+    return 'Requerido';
   }
 }
 
 export function minLength(min) {
   return value => {
     if (!isEmpty(value) && value.length < min) {
-      return `Must be at least ${min} characters`;
+      return `Deve possuir pelo menos ${min} caracteres`;
     }
   };
 }
@@ -25,21 +25,21 @@ export function minLength(min) {
 export function maxLength(max) {
   return value => {
     if (!isEmpty(value) && value.length > max) {
-      return `Must be no more than ${max} characters`;
+      return `Não pode possuir mais que ${max} caracteres`;
     }
   };
 }
 
 export function integer(value) {
   if (!Number.isInteger(Number(value))) {
-    return 'Must be an integer';
+    return 'Deve ser um número inteiro';
   }
 }
 
 export function oneOf(enumeration) {
   return value => {
     if (!~enumeration.indexOf(value)) {
-      return `Must be one of: ${enumeration.join(', ')}`;
+      return `Deve ser um desses valores: ${enumeration.join(', ')}`;
     }
   };
 }

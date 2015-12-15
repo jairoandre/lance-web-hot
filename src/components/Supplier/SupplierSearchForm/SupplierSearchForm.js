@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import {Grid, Row, Col, Input} from 'react-bootstrap';
 
 export default class SupplierSearchForm extends Component {
@@ -31,9 +32,11 @@ export default class SupplierSearchForm extends Component {
               <i className={refreshClassName}/> {' '} Filtrar
             </button>
             {'  '}
-            <a href="suppliers/add" className="btn btn-primary" disabled={loading}>
-              <i className="fa fa-file"/> {' '} Novo cliente
-            </a>
+            <LinkContainer to="/suppliers/add">
+              <button className="btn btn-primary" disabled={loading}>
+                <i className="fa fa-file"/> {' '} Novo cliente
+              </button>
+            </LinkContainer>
           </Col>
         </Row>
       </Grid>
