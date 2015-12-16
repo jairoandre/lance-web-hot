@@ -14,6 +14,13 @@ export function required(value) {
   }
 }
 
+export function deepRequired(field) {
+  return value => {
+    alert(value[field]);
+    return required(value[field]);
+  };
+}
+
 export function minLength(min) {
   return value => {
     if (!isEmpty(value) && value.length < min) {

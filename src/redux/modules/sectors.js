@@ -1,12 +1,12 @@
-const LOAD = 'lance-web/suppliers/LOAD';
-const LOAD_SUCCESS = 'lance-web/suppliers/LOAD_SUCCESS';
-const LOAD_FAIL = 'lance-web/suppliers/LOAD_FAIL';
-const EDIT_START = 'lance-web/suppliers/EDIT_START';
-const EDIT_STOP = 'lance-web/suppliers/EDIT_STOP';
-const SAVE = 'lance-web/suppliers/SAVE';
-const SAVE_SUCCESS = 'lance-web/suppliers/SAVE_SUCCESS';
-const SAVE_FAIL = 'lance-web/suppliers/SAVE_FAIL';
-const CLEAR_ERRORS = 'lance-web/suppliers/CLEAR_ERRORS';
+const LOAD = 'lance-web/sectors/LOAD';
+const LOAD_SUCCESS = 'lance-web/sectors/LOAD_SUCCESS';
+const LOAD_FAIL = 'lance-web/sectors/LOAD_FAIL';
+const EDIT_START = 'lance-web/sectors/EDIT_START';
+const EDIT_STOP = 'lance-web/sectors/EDIT_STOP';
+const SAVE = 'lance-web/sectors/SAVE';
+const SAVE_SUCCESS = 'lance-web/sectors/SAVE_SUCCESS';
+const SAVE_FAIL = 'lance-web/sectors/SAVE_FAIL';
+const CLEAR_ERRORS = 'lance-web/sectors/CLEAR_ERRORS';
 
 const initialState = {
   loaded: false,
@@ -26,7 +26,7 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         loading: false,
         loaded: true,
-        data: action.result.suppliers,
+        data: action.result.sectors,
         error: null
       };
     case LOAD_FAIL:
@@ -86,29 +86,29 @@ export default function reducer(state = initialState, action = {}) {
 }
 
 export function isLoaded(globalState) {
-  return globalState.suppliers && globalState.suppliers.loaded;
+  return globalState.sectors && globalState.sectors.loaded;
 }
 
 export function filter(term) {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.post('/supplier/filter/', {data: {title: term}}) // params not used, just shown as demonstration
+    promise: (client) => client.post('/sector/filter/', {data: {title: term}}) // params not used, just shown as demonstration
   };
 }
 
 export function load() {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('/supplier/load') // params not used, just shown as demonstration
+    promise: (client) => client.get('/sector/load') // params not used, just shown as demonstration
   };
 }
 
-export function save(supplier) {
+export function save(sector) {
   return {
     types: [SAVE, SAVE_SUCCESS, SAVE_FAIL],
-    id: supplier.id,
-    promise: (client) => client.post('/supplier/save', {
-      data: supplier
+    id: sector.id,
+    promise: (client) => client.post('/sector/save', {
+      data: sector
     })
   };
 }

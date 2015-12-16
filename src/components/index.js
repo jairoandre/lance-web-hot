@@ -4,7 +4,6 @@
  *  ie: import { CounterButton, InfoBar } from 'components';
  *
  */
-
-export SurveyForm from './SurveyForm/SurveyForm';
-export WidgetForm from './WidgetForm/WidgetForm';
 export * from './Supplier';
+export * from './ServiceType';
+export * from './Service';

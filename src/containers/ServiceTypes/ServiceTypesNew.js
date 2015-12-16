@@ -1,18 +1,18 @@
 import React, {Component, PropTypes} from 'react';
 import {Grid, Row, Col, Panel} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import {initialize} from 'redux-form';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
+import {initialize} from 'redux-form';
 import { pushState } from 'redux-router';
-import { save } from 'redux/modules/suppliers';
-import {SupplierForm} from 'components';
+import { save } from 'redux/modules/serviceTypes';
+import {ServiceTypeForm} from 'components';
 
 @connect(state => ({
-  saveError: state.suppliers.saveError,
-  loading: state.suppliers.loading
+  saveError: state.serviceTypes.saveError,
+  loading: state.serviceTypes.loading
 }), {initialize, pushState, save})
-export default class SuppliersNew extends Component {
+export default class ServiceTypesNew extends Component {
   static propTypes = {
     initialize: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired,
@@ -23,23 +23,23 @@ export default class SuppliersNew extends Component {
 
   handleSubmit = (data) => {
     this.props.save(data);
-    this.props.initialize('supplier', {});
+    this.props.initialize('serviceType', {});
     if (this.props.saveError) {
       console.log(this.props.saveError);
     } else {
-      this.props.pushState(null, '/suppliers');
+      this.props.pushState(null, '/serviceTypes');
     }
   }
 
   render() {
     return (
       <div className="container">
-        <DocumentMeta title={config.app.title + ': Novo cliente'}/>
-        <Panel header="Novo cliente" bsStyle="primary">
+        <DocumentMeta title={config.app.title + ': Novo tipo de serviço'}/>
+        <Panel header="Novo tipo de serviço" bsStyle="primary">
           <Grid fluid>
             <Row>
               <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                <SupplierForm onSubmit={this.handleSubmit}/>
+                <ServiceTypeForm onSubmit={this.handleSubmit}/>
               </Col>
             </Row>
           </Grid>

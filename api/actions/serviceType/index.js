@@ -1,6 +1,6 @@
 import {loadTpl, filterTpl, saveTpl} from 'utils/actionHelpers';
 
-const serviceName = 'suppliers';
+const serviceName = 'serviceTypes';
 
 export function load(req) {
     return loadTpl(req, serviceName);

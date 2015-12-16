@@ -3,13 +3,15 @@ import { routerStateReducer } from 'redux-router';
 
 import auth from './auth';
 import {reducer as form} from 'redux-form';
-import widgets from './widgets';
 import suppliers from './suppliers';
+import serviceTypes from './serviceTypes';
+import services from './services';
 
 export default combineReducers({
   router: routerStateReducer,
   auth,
   form,
-  widgets,
-  suppliers
+  suppliers,
+  serviceTypes,
+  services
 });

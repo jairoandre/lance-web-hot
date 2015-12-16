@@ -3,13 +3,15 @@ import {IndexRoute, Route} from 'react-router';
 import { isLoaded as isAuthLoaded, load as loadAuth } from 'redux/modules/auth';
 import {
     App,
-    Widgets,
     About,
     Login,
     LoginSuccess,
     Suppliers,
     SuppliersNew,
-    Survey,
+    ServiceTypes,
+    ServiceTypesNew,
+    Service,
+    ServiceNew,
     NotFound,
   } from 'containers';
 
@@ -45,8 +47,10 @@ export default (store) => {
         <Route path="loginSuccess" component={LoginSuccess}/>
         <Route path="suppliers" component={Suppliers}/>
         <Route path="suppliers/add" component={SuppliersNew}/>
-        <Route path="survey" component={Survey}/>
-        <Route path="widgets" component={Widgets}/>
+        <Route path="serviceTypes" component={ServiceTypes}/>
+        <Route path="serviceTypes/add" component={ServiceTypesNew}/>
+        <Route path="services" component={Service}/>
+        <Route path="services/add" component={ServiceNew}/>
       </Route>
 
       { /* Routes */ }

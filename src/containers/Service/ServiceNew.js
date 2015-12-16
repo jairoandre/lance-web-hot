@@ -1,18 +1,18 @@
 import React, {Component, PropTypes} from 'react';
 import {Grid, Row, Col, Panel} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import {initialize} from 'redux-form';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
-import { pushState } from 'redux-router';
-import { save } from 'redux/modules/suppliers';
-import {SupplierForm} from 'components';
+import {initialize} from 'redux-form';
+import {pushState} from 'redux-router';
+import {save} from 'redux/modules/services';
+import {ServiceForm} from 'components';
 
 @connect(state => ({
-  saveError: state.suppliers.saveError,
-  loading: state.suppliers.loading
+  saveError: state.services.saveError,
+  loading: state.services.loading
 }), {initialize, pushState, save})
-export default class SuppliersNew extends Component {
+export default class ServiceNew extends Component {
   static propTypes = {
     initialize: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired,
@@ -22,24 +22,25 @@ export default class SuppliersNew extends Component {
   }
 
   handleSubmit = (data) => {
-    this.props.save(data);
-    this.props.initialize('supplier', {});
-    if (this.props.saveError) {
-      console.log(this.props.saveError);
-    } else {
-      this.props.pushState(null, '/suppliers');
-    }
+    alert(JSON.stringify(data));
+    // this.props.save(data);
+    // this.props.initialize('service', {});
+    // if (this.props.saveError) {
+    //   console.log(this.props.saveError);
+    // } else {
+    //   this.props.pushState(null, '/services');
+    // }
   }
 
   render() {
     return (
       <div className="container">
-        <DocumentMeta title={config.app.title + ': Novo cliente'}/>
-        <Panel header="Novo cliente" bsStyle="primary">
+        <DocumentMeta title={config.app.title + ': Novo serviço'}/>
+        <Panel header="Novo serviço" bsStyle="primary">
           <Grid fluid>
             <Row>
               <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                <SupplierForm onSubmit={this.handleSubmit}/>
+                <ServiceForm onSubmit={this.handleSubmit}/>
               </Col>
             </Row>
           </Grid>

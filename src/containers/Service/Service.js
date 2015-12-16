@@ -1,19 +1,19 @@
 import React, {Component, PropTypes} from 'react';
 import {Grid, Row, Col, Panel, Alert, Fade} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import * as suppliersActions from 'redux/modules/suppliers';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
-import {SupplierTableList, SupplierSearchForm} from 'components';
+import * as serviceActions from 'redux/modules/services';
+import {ServiceTableList, ServiceSearchForm} from 'components';
 
 
 @connect(
   state => ({
-    list: state.suppliers.data,
-    error: state.suppliers.error,
-    loading: state.suppliers.loading,
-  }), {...suppliersActions})
-export default class Supplier extends Component {
+    list: state.services.data,
+    error: state.services.error,
+    loading: state.services.loading,
+  }), {...serviceActions})
+export default class Service extends Component {
   static propTypes = {
     list: PropTypes.array,
     error: PropTypes.string,
@@ -24,31 +24,39 @@ export default class Supplier extends Component {
   }
 
   render() {
-    const {list, loading, filter, clearErrors} = this.props;
+    const {list, loading, filter, error, clearErrors} = this.props;
+    let showMessage;
+    if (error) {
+      showMessage = true;
+    }
+    const hideMessage = () => {
+      showMessage = false;
+      setTimeout(clearErrors(), 2000);
+    };
     return (
       <div className="container">
-        <DocumentMeta title={config.app.title + ': Clientes'}/>
-        {this.props.error &&
-          <Fade in={this.props.error}>
-            <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
+        <DocumentMeta title={config.app.title + ': Serviço'}/>
+        {error &&
+          <Fade in={showMessage}>
+            <Alert bsStyle="danger" onDismiss={hideMessage} dismissAfter={2000}>
               <h4>Erro</h4>
-              <p>{this.props.error}</p>
+              <p>{error}</p>
             </Alert>
           </Fade>
         }
         <Grid fluid>
           <Row>
             <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-              <Panel header="Clientes" bsStyle="primary">
+              <Panel header="Serviço" bsStyle="primary">
                 <Grid fluid>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                      <SupplierSearchForm onSubmit={filter} loading={loading} />
+                      <ServiceSearchForm onSubmit={filter} loading={loading} />
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                    {list && list.length && <SupplierTableList {...this.props}/>}
+                    {list && list.length && <ServiceTableList {...this.props}/>}
                     </Col>
                   </Row>
                 </Grid>

@@ -72,11 +72,14 @@ export default class App extends Component {
                 <LinkContainer to="/suppliers">
                   <NavItem eventKey={1.1}>Clientes</NavItem>
                 </LinkContainer>
+                <LinkContainer to="/serviceTypes">
+                  <NavItem eventKey={1.2}>Tipos de serviço</NavItem>
+                </LinkContainer>
                 <LinkContainer to="/services">
-                  <NavItem eventKey={1.2}>Serviços</NavItem>
+                  <NavItem eventKey={1.3}>Serviços</NavItem>
                 </LinkContainer>
                 <LinkContainer to="/contracts">
-                  <NavItem eventKey={1.3}>Contratos</NavItem>
+                  <NavItem eventKey={1.4}>Contratos</NavItem>
                 </LinkContainer>
               </NavDropdown>
               <NavDropdown id="dropdownEntrys" eventKey={2} title="Lançamentos">
@@ -89,9 +92,6 @@ export default class App extends Component {
               </NavDropdown>
               <LinkContainer to="/reports">
                 <NavItem eventKey={3}>Relatórios</NavItem>
-              </LinkContainer>
-              <LinkContainer to="/widgets">
-                <NavItem eventKey={4}>Widgets</NavItem>
               </LinkContainer>
             </Nav>
             <Nav navbar right>

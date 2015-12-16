@@ -20,26 +20,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/components/Supplier/SupplierListRow/SupplierListRow.js",
+			"file": "src/components/index.js",
 			"settings":
 			{
-				"buffer_size": 1833,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/theme/common.scss",
-			"settings":
-			{
-				"buffer_size": 78,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/containers/Home/Home.scss",
-			"settings":
-			{
-				"buffer_size": 885,
+				"buffer_size": 360,
 				"line_ending": "Windows"
 			}
 		}
@@ -110,17 +94,67 @@
 	"expanded_folders":
 	[
 		"/C/Users/jairoportela/projects/lance/lance-web",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/middleware",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules"
+		"/C/Users/jairoportela/projects/lance/lance-web/api",
+		"/C/Users/jairoportela/projects/lance/lance-web/src",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/middleware"
 	],
 	"file_history":
 	[
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes/ServiceTypesNew.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeListHeader.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/SuppliersNew.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/Suppliers.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/load.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/filter.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/save.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/App/App.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/routes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/serviceTypeValidation.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeSearchForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeTableList.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierListRow.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeListRow.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes/ServiceTypes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/reducer.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/utils/actionHelpers.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/serviceTypes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierSearchForm/SupplierSearchForm.scss",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/suppliers.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm/SupplierForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierSearchForm/SupplierSearchForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/supplier/save.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/supplier/filter.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm/supplierValidation.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/supplier/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Home/Home.scss",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/App/App.scss",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/utils/validation.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Survey/Survey.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Home/Home.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/InputReduxForm/InputReduxForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/theme/common.scss",
+		"/C/Users/jairoportela/projects/lance/lance-web/lance-web.sublime-project",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierListRow/SupplierListRow.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierListRow/SupplierListRow.scss",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/DevTools/DevTools.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/README.md",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/Suppliers.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/.gitignore",
-		"/C/Users/jairoportela/projects/lance/lance-web/lance-web.sublime-project",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/containers/Home/Home.scss",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/server.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/lance-web.sublime-project",
@@ -198,7 +232,7 @@
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -213,6 +247,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".",
+			"import",
+			"load",
+			"Supplier",
+			"supplier",
+			"Supplier",
+			"supplier",
+			"Suppliers",
+			"Supplier",
+			"supplier",
+			"Suppliers",
+			"suppliers",
+			"Supplier",
+			"suppliers",
+			"Supplier",
+			"suppliers",
+			"SupplierS",
+			"suppliers",
+			"serviceType",
+			"suppliers",
+			"widget",
+			"SupplierTableList",
+			"surveyValidation",
 			"ToolTip",
 			"redux-devtools",
 			"redux-monitor",
@@ -285,93 +342,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/components/Supplier/SupplierListRow/SupplierListRow.js",
+					"file": "src/components/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1833,
+						"buffer_size": 360,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								714,
-								714
+								360,
+								360
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 66.0,
+						"translation.y": 132.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/theme/common.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 78,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								29,
-								29
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/containers/Home/Home.scss",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 885,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -429,6 +424,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"home.js",
+				"src\\containers\\Home\\Home.js"
+			],
 			[
 				"common.scss",
 				"src\\theme\\common.scss"
