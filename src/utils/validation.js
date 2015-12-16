@@ -16,7 +16,6 @@ export function required(value) {
 
 export function deepRequired(field) {
   return value => {
-    alert(value[field]);
     return required(value[field]);
   };
 }

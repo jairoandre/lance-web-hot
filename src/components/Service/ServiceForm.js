@@ -1,11 +1,24 @@
 import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
+import connectData from 'helpers/connectData';
+import {connect} from 'react-redux';
+import * as serviceTypesActions from 'redux/modules/serviceTypes';
+import {isLoaded as serviceTypeIsLoaded, filter as loadServiceTypes} from 'redux/modules/serviceTypes';
 import serviceValidation from './serviceValidation';
 
-const name = 'service';
+function fetchDataDeferred(getState, dispatch) {
+  alert('teste');
+  if (!serviceTypeIsLoaded(getState())) {
+    return dispatch(loadServiceTypes(''));
+  }
+}
 
+@connectData(null, fetchDataDeferred)
+@connect(state => ({
+  serviceTypes: state.serviceTypes.data
+}), {...serviceTypesActions})
 @reduxForm({
-  form: name,
+  form: 'service',
   fields: [
     'title',
     'defaultHistory',
@@ -19,6 +32,7 @@ const name = 'service';
 export default
 class ServiceForm extends Component {
   static propTypes = {
+    serviceTypes: PropTypes.array,
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     resetForm: PropTypes.func.isRequired
@@ -27,13 +41,15 @@ class ServiceForm extends Component {
     const {
       fields: {title, defaultHistory, documentType, ledgerAccount, resultAccount, costAccount, serviceType},
       handleSubmit,
+      serviceTypes,
       resetForm
       } = this.props;
-    const serviceTypes = [{id: 1, title: 'Tipo 1'}, {id: 2, title: 'Tipo 2'}];
     let listItems;
-    listItems = serviceTypes.map((item, index) => {
-      return (<option key={index} label={item.title}>{item.id}</option> );
-    });
+    if (serviceTypes) {
+      listItems = serviceTypes.map((item, index) => {
+        return (<option key={index} label={item.title}>{item.id}</option> );
+      });
+    }
     const renderInput = (field, label) =>
       <div className={'form-group' + (field.error && field.touched ? ' has-error' : '')}>
         <label htmlFor={field.name}>{label}</label>{field.error && field.touched && <span className="text-danger">{field.error}</span>}
