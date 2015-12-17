@@ -1,9 +1,9 @@
 import React, {Component, PropTypes} from 'react';
-import {Grid, Row, Col, Panel, Alert, Fade} from 'react-bootstrap';
+import {Grid, Row, Col, Panel, Alert} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import * as suppliersActions from 'redux/modules/suppliers';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
+import * as suppliersActions from 'redux/modules/suppliers';
 import {TableList, FilterInput} from 'components';
 
 @connect(
@@ -19,11 +19,16 @@ export default class Supplier extends Component {
     loading: PropTypes.bool,
     load: PropTypes.func.isRequired,
     filter: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired
   }
 
+  handleRemove = (id) => {
+    this.props.remove(id);
+  }
+
   render() {
-    const {list, loading, filter, clearErrors} = this.props;
+    const {list, loading, filter, error, clearErrors} = this.props;
     const fields = [
       ['id', 'Id'],
       ['title', 'Nome'],
@@ -31,13 +36,11 @@ export default class Supplier extends Component {
     return (
       <div className="container">
         <DocumentMeta title={config.app.title + ': Clientes'}/>
-        {this.props.error &&
-          <Fade in={this.props.error}>
-            <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
-              <h4>Erro</h4>
-              <p>{this.props.error}</p>
-            </Alert>
-          </Fade>
+        {error &&
+          <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
+            <h4>Erro</h4>
+            <p>{error}</p>
+          </Alert>
         }
         <Grid fluid>
           <Row>
@@ -51,7 +54,7 @@ export default class Supplier extends Component {
                   </Row>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                    {list && list.length && <TableList list={list} fields={fields}/>}
+                    {list && list.length && <TableList list={list} fields={fields} onRemove={this.handleRemove}/>}
                     </Col>
                   </Row>
                 </Grid>

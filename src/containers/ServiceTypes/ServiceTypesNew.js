@@ -1,9 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import {Grid, Row, Col, Panel} from 'react-bootstrap';
 import {connect} from 'react-redux';
+import {initialize} from 'redux-form';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
-import {initialize} from 'redux-form';
 import { pushState } from 'redux-router';
 import { save } from 'redux/modules/serviceTypes';
 import {ServiceTypeForm} from 'components';

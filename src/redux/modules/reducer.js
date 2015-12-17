@@ -7,6 +7,7 @@ import suppliers from './suppliers';
 import serviceTypes from './serviceTypes';
 import services from './services';
 import sectors from './sectors';
+import contracts from './contracts';
 
 export default combineReducers({
   router: routerStateReducer,
@@ -15,5 +16,6 @@ export default combineReducers({
   suppliers,
   serviceTypes,
   services,
+  contracts,
   sectors
 });

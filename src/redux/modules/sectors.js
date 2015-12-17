@@ -6,7 +6,10 @@ const EDIT_STOP = 'lance-web/sectors/EDIT_STOP';
 const SAVE = 'lance-web/sectors/SAVE';
 const SAVE_SUCCESS = 'lance-web/sectors/SAVE_SUCCESS';
 const SAVE_FAIL = 'lance-web/sectors/SAVE_FAIL';
-const CLEAR_MESSAGES = 'lance-web/sectors/CLEAR_MESSAGES';
+const REMOVE = 'lance-web/sectors/REMOVE';
+const REMOVE_SUCCESS = 'lance-web/sectors/REMOVE_SUCCESS';
+const REMOVE_FAIL = 'lance-web/sectors/REMOVE_FAIL';
+const CLEAR_ERRORS = 'lance-web/sectors/CLEAR_ERRORS';
 
 const initialState = {
   loaded: false,
@@ -56,31 +59,53 @@ export default function reducer(state = initialState, action = {}) {
     case SAVE:
       return {
         ...state,
-        saving: {
-          loading: true,
-          error: null,
-          success: null
-        }
+        loading: true,
+        error: null
       };
     case SAVE_SUCCESS:
       return {
         ...state,
+        data: [...state.data, action.result.sector],
         loading: false,
-        error: null,
-        success: action.id ? 'Setor atualizado com sucesso' : 'Setor criado com sucesso'
+        error: null
       };
     case SAVE_FAIL:
-      return typeof action.error === 'string' ? {
-        ...state,
-        loading: false,
-        error: null,
-        success: action.id ? 'Setor atualizado com sucesso' : 'Setor criado com sucesso'
-      } : state;
-    case CLEAR_MESSAGES:
       return {
         ...state,
-        error: null,
-        success: null
+        loading: false,
+        error: action.error
+      };
+    case REMOVE:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    case REMOVE_SUCCESS:
+      let idx;
+      for (let jdx = 0; jdx < state.data.length; jdx++) {
+        if (state.data[jdx].id === action.id) {
+          idx = jdx;
+        }
+      }
+      return {
+        ...state,
+        data: [
+          ...state.data.slice(0, idx),
+          ...state.data.slice(idx + 1)],
+        loading: false,
+        error: null
+      };
+    case REMOVE_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null
       };
     default:
       return state;
@@ -115,9 +140,17 @@ export function save(sector) {
   };
 }
 
-export function clearMessages() {
+export function remove(id) {
   return {
-    type: CLEAR_MESSAGES
+    types: [REMOVE, REMOVE_SUCCESS, REMOVE_FAIL],
+    id: id,
+    promise: (client) => client.post('/sector/remove', {data: {id: id}})
+  };
+}
+
+export function clearErrors() {
+  return {
+    type: CLEAR_ERRORS
   };
 }
 

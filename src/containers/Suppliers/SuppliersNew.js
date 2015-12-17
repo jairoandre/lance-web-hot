@@ -9,7 +9,7 @@ import { save } from 'redux/modules/suppliers';
 import {SupplierForm} from 'components';
 
 @connect(state => ({
-  saveError: state.suppliers.saveError,
+  error: state.suppliers.error,
   loading: state.suppliers.loading
 }), {initialize, pushState, save})
 export default class SuppliersNew extends Component {
@@ -17,15 +17,15 @@ export default class SuppliersNew extends Component {
     initialize: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired,
     save: PropTypes.func.isRequired,
-    saveError: PropTypes.object,
+    error: PropTypes.object,
     loading: PropTypes.bool
   }
 
   handleSubmit = (data) => {
     this.props.save(data);
     this.props.initialize('supplier', {});
-    if (this.props.saveError) {
-      console.log(this.props.saveError);
+    if (this.props.error) {
+      console.log(this.props.error);
     } else {
       this.props.pushState(null, '/suppliers');
     }

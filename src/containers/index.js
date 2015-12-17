@@ -9,4 +9,6 @@ export ServiceTypes from './ServiceTypes/ServiceTypes';
 export ServiceTypesNew from './ServiceTypes/ServiceTypesNew';
 export Service from './Service/Service';
 export ServiceNew from './Service/ServiceNew';
+export Contract from './Contract/Contract';
+export ContractNew from './Contract/ContractNew';
 export NotFound from './NotFound/NotFound';

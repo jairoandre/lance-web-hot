@@ -1,4 +1,4 @@
-import {loadTpl, filterTpl, saveTpl} from 'utils/actionHelpers';
+import {loadTpl, filterTpl, saveTpl, removeTpl} from 'utils/actionHelpers';
 
 const serviceName = 'suppliers';
 
@@ -12,4 +12,8 @@ export function filter(req) {
 
 export function save(req) {
     return saveTpl(req, serviceName);
+}
+
+export function remove(req) {
+    return removeTpl(req, serviceName);
 }

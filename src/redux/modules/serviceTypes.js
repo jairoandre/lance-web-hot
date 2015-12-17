@@ -65,6 +65,7 @@ export default function reducer(state = initialState, action = {}) {
     case SAVE_SUCCESS:
       return {
         ...state,
+        data: [...state.data, action.result.serviceType],
         loading: false,
         error: null
       };

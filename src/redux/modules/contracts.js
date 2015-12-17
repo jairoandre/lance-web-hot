@@ -6,6 +6,9 @@ const EDIT_STOP = 'lance-web/contracts/EDIT_STOP';
 const SAVE = 'lance-web/contracts/SAVE';
 const SAVE_SUCCESS = 'lance-web/contracts/SAVE_SUCCESS';
 const SAVE_FAIL = 'lance-web/contracts/SAVE_FAIL';
+const REMOVE = 'lance-web/contracts/REMOVE';
+const REMOVE_SUCCESS = 'lance-web/contracts/REMOVE_SUCCESS';
+const REMOVE_FAIL = 'lance-web/contracts/REMOVE_FAIL';
 const CLEAR_ERRORS = 'lance-web/contracts/CLEAR_ERRORS';
 
 const initialState = {
@@ -56,29 +59,53 @@ export default function reducer(state = initialState, action = {}) {
     case SAVE:
       return {
         ...state,
-        loadingSave: true,
-        saveError: null
+        loading: true,
+        error: null
       };
     case SAVE_SUCCESS:
       return {
         ...state,
-        loadingSave: false,
-        saveError: null
+        data: [...state.data, action.result.contract],
+        loading: false,
+        error: null
       };
     case SAVE_FAIL:
-      return typeof action.error === 'string' ? {
+      return {
         ...state,
-        loadingSave: false,
-        saveError: {
-          ...state.saveError,
-          [action.id]: action.error
+        loading: false,
+        error: action.error
+      };
+    case REMOVE:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    case REMOVE_SUCCESS:
+      let idx;
+      for (let jdx = 0; jdx < state.data.length; jdx++) {
+        if (state.data[jdx].id === action.id) {
+          idx = jdx;
         }
-      } : state;
+      }
+      return {
+        ...state,
+        data: [
+          ...state.data.slice(0, idx),
+          ...state.data.slice(idx + 1)],
+        loading: false,
+        error: null
+      };
+    case REMOVE_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      };
     case CLEAR_ERRORS:
       return {
         ...state,
-        error: null,
-        saveError: null
+        error: null
       };
     default:
       return state;
@@ -110,6 +137,14 @@ export function save(contract) {
     promise: (client) => client.post('/contract/save', {
       data: contract
     })
+  };
+}
+
+export function remove(id) {
+  return {
+    types: [REMOVE, REMOVE_SUCCESS, REMOVE_FAIL],
+    id: id,
+    promise: (client) => client.post('/contract/remove', {data: {id: id}})
   };
 }
 

@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Grid, Row, Col, Panel, Alert, Fade} from 'react-bootstrap';
+import {Grid, Row, Col, Panel, Alert} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
@@ -19,19 +19,16 @@ export default class Service extends Component {
     loading: PropTypes.bool,
     load: PropTypes.func.isRequired,
     filter: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired
+  }
+
+  handleRemove = (id) => {
+    this.props.remove(id);
   }
 
   render() {
     const {list, loading, filter, error, clearErrors} = this.props;
-    let showMessage;
-    if (error) {
-      showMessage = true;
-    }
-    const hideMessage = () => {
-      showMessage = false;
-      setTimeout(clearErrors(), 2000);
-    };
     const fields = [
       ['id', 'Id'],
       ['title', 'Nome do serviço'],
@@ -45,12 +42,10 @@ export default class Service extends Component {
       <div className="container">
         <DocumentMeta title={config.app.title + ': Serviço'}/>
         {error &&
-          <Fade in={showMessage}>
-            <Alert bsStyle="danger" onDismiss={hideMessage} dismissAfter={2000}>
-              <h4>Erro</h4>
-              <p>{error}</p>
-            </Alert>
-          </Fade>
+          <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
+            <h4>Erro</h4>
+            <p>{error}</p>
+          </Alert>
         }
         <Grid fluid>
           <Row>
@@ -64,7 +59,7 @@ export default class Service extends Component {
                   </Row>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                    {list && list.length && <TableList list={list} fields={fields}/>}
+                    {list && list.length && <TableList list={list} fields={fields} onRemove={this.handleRemove}/>}
                     </Col>
                   </Row>
                 </Grid>

@@ -9,7 +9,7 @@ import {save} from 'redux/modules/contracts';
 import {ContractForm} from 'components';
 
 @connect(state => ({
-  saveError: state.contracts.saveError,
+  error: state.contracts.error,
   loading: state.contracts.loading
 }), {initialize, pushState, save})
 export default class ContractNew extends Component {
@@ -17,15 +17,15 @@ export default class ContractNew extends Component {
     initialize: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired,
     save: PropTypes.func.isRequired,
-    saveError: PropTypes.object,
+    error: PropTypes.object,
     loading: PropTypes.bool
   }
 
   handleSubmit = (data) => {
     this.props.save(data);
     this.props.initialize('contract', {});
-    if (this.props.saveError) {
-      console.log(this.props.saveError);
+    if (this.props.error) {
+      console.log(this.props.error);
     } else {
       this.props.pushState(null, '/contracts');
     }

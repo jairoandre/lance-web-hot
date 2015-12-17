@@ -6,7 +6,6 @@ import config from '../../config';
 import * as serviceTypesActions from 'redux/modules/serviceTypes';
 import {TableList, FilterInput} from 'components';
 
-
 @connect(
   state => ({
     list: state.serviceTypes.data,
@@ -29,17 +28,17 @@ export default class ServiceTypes extends Component {
   }
 
   render() {
-    const {list, loading, filter, clearErrors} = this.props;
+    const {list, loading, filter, error, clearErrors} = this.props;
     const fields = [
       ['id', 'Id'],
       ['title', 'Nome']];
     return (
       <div className="container">
         <DocumentMeta title={config.app.title + ': Tipo de serviço'}/>
-        {this.props.error &&
+        {error &&
           <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
             <h4>Erro</h4>
-            <p>{this.props.error}</p>
+            <p>{error}</p>
           </Alert>
         }
         <Grid fluid>
