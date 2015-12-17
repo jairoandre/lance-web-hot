@@ -6,6 +6,7 @@ import {reducer as form} from 'redux-form';
 import suppliers from './suppliers';
 import serviceTypes from './serviceTypes';
 import services from './services';
+import sectors from './sectors';
 
 export default combineReducers({
   router: routerStateReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
   form,
   suppliers,
   serviceTypes,
-  services
+  services,
+  sectors
 });

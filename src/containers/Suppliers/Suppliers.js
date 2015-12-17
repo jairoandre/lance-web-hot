@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 import * as suppliersActions from 'redux/modules/suppliers';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
-import {SupplierTableList, SupplierSearchForm} from 'components';
-
+import {TableList, FilterInput} from 'components';
 
 @connect(
   state => ({
@@ -25,6 +24,10 @@ export default class Supplier extends Component {
 
   render() {
     const {list, loading, filter, clearErrors} = this.props;
+    const fields = [
+      ['id', 'Id'],
+      ['title', 'Nome'],
+      ['supplierCode', 'Código']];
     return (
       <div className="container">
         <DocumentMeta title={config.app.title + ': Clientes'}/>
@@ -43,12 +46,12 @@ export default class Supplier extends Component {
                 <Grid fluid>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                      <SupplierSearchForm onSubmit={filter} loading={loading} />
+                      <FilterInput onSubmit={filter} loading={loading} addBtnLabel="Novo cliente" addBtnRoute="/suppliers/add"/>
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                    {list && list.length && <SupplierTableList {...this.props}/>}
+                    {list && list.length && <TableList list={list} fields={fields}/>}
                     </Col>
                   </Row>
                 </Grid>

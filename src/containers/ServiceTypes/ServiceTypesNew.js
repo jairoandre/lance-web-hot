@@ -9,7 +9,7 @@ import { save } from 'redux/modules/serviceTypes';
 import {ServiceTypeForm} from 'components';
 
 @connect(state => ({
-  saveError: state.serviceTypes.saveError,
+  error: state.serviceTypes.error,
   loading: state.serviceTypes.loading
 }), {initialize, pushState, save})
 export default class ServiceTypesNew extends Component {
@@ -17,15 +17,15 @@ export default class ServiceTypesNew extends Component {
     initialize: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired,
     save: PropTypes.func.isRequired,
-    saveError: PropTypes.object,
+    error: PropTypes.object,
     loading: PropTypes.bool
   }
 
   handleSubmit = (data) => {
     this.props.save(data);
     this.props.initialize('serviceType', {});
-    if (this.props.saveError) {
-      console.log(this.props.saveError);
+    if (this.props.error) {
+      console.log(this.props.error);
     } else {
       this.props.pushState(null, '/serviceTypes');
     }

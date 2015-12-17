@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Grid, Row, Col, Panel, Alert, Fade} from 'react-bootstrap';
+import {Grid, Row, Col, Panel, Alert} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
@@ -29,12 +29,10 @@ export default class Contract extends Component {
       <div className="container">
         <DocumentMeta title={config.app.title + ': Contrato'}/>
         {this.props.error &&
-          <Fade in={this.props.error}>
-            <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
-              <h4>Erro</h4>
-              <p>{this.props.error}</p>
-            </Alert>
-          </Fade>
+          <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
+            <h4>Erro</h4>
+            <p>{this.props.error}</p>
+          </Alert>
         }
         <Grid fluid>
           <Row>

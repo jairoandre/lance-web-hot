@@ -6,7 +6,7 @@ const EDIT_STOP = 'lance-web/sectors/EDIT_STOP';
 const SAVE = 'lance-web/sectors/SAVE';
 const SAVE_SUCCESS = 'lance-web/sectors/SAVE_SUCCESS';
 const SAVE_FAIL = 'lance-web/sectors/SAVE_FAIL';
-const CLEAR_ERRORS = 'lance-web/sectors/CLEAR_ERRORS';
+const CLEAR_MESSAGES = 'lance-web/sectors/CLEAR_MESSAGES';
 
 const initialState = {
   loaded: false,
@@ -56,29 +56,31 @@ export default function reducer(state = initialState, action = {}) {
     case SAVE:
       return {
         ...state,
-        loadingSave: true,
-        saveError: null
+        saving: {
+          loading: true,
+          error: null,
+          success: null
+        }
       };
     case SAVE_SUCCESS:
       return {
         ...state,
-        loadingSave: false,
-        saveError: null
+        loading: false,
+        error: null,
+        success: action.id ? 'Setor atualizado com sucesso' : 'Setor criado com sucesso'
       };
     case SAVE_FAIL:
       return typeof action.error === 'string' ? {
         ...state,
-        loadingSave: false,
-        saveError: {
-          ...state.saveError,
-          [action.id]: action.error
-        }
+        loading: false,
+        error: null,
+        success: action.id ? 'Setor atualizado com sucesso' : 'Setor criado com sucesso'
       } : state;
-    case CLEAR_ERRORS:
+    case CLEAR_MESSAGES:
       return {
         ...state,
         error: null,
-        saveError: null
+        success: null
       };
     default:
       return state;
@@ -113,9 +115,9 @@ export function save(sector) {
   };
 }
 
-export function clearErrors() {
+export function clearMessages() {
   return {
-    type: CLEAR_ERRORS
+    type: CLEAR_MESSAGES
   };
 }
 

@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
 import * as serviceActions from 'redux/modules/services';
-import {ServiceTableList, ServiceSearchForm} from 'components';
-
+import {TableList, FilterInput} from 'components';
 
 @connect(
   state => ({
@@ -33,6 +32,15 @@ export default class Service extends Component {
       showMessage = false;
       setTimeout(clearErrors(), 2000);
     };
+    const fields = [
+      ['id', 'Id'],
+      ['title', 'Nome do serviço'],
+      ['defaultHistory', 'Histórico padrão'],
+      ['documentType', 'Tipo de documento'],
+      ['ledgerAccount', 'Conta contábil'],
+      ['resultAccount', 'Conta resultado'],
+      ['costAccount', 'Conta de custo'],
+      ['serviceType.title', 'Tipo de serviço']];
     return (
       <div className="container">
         <DocumentMeta title={config.app.title + ': Serviço'}/>
@@ -51,12 +59,12 @@ export default class Service extends Component {
                 <Grid fluid>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                      <ServiceSearchForm onSubmit={filter} loading={loading} />
+                      <FilterInput onSubmit={filter} loading={loading} addBtnLabel="Novo serviço" addBtnRoute="/services/add"/>
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                    {list && list.length && <ServiceTableList {...this.props}/>}
+                    {list && list.length && <TableList list={list} fields={fields}/>}
                     </Col>
                   </Row>
                 </Grid>

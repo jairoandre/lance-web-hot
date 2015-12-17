@@ -7,3 +7,4 @@
 export * from './Supplier';
 export * from './ServiceType';
 export * from './Service';
+export * from './Common';

@@ -1,22 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
-import connectData from 'helpers/connectData';
-import {connect} from 'react-redux';
-import * as serviceTypesActions from 'redux/modules/serviceTypes';
-import {isLoaded as serviceTypeIsLoaded, filter as loadServiceTypes} from 'redux/modules/serviceTypes';
 import serviceValidation from './serviceValidation';
+import {renderInput, renderSelect} from 'utils/renders';
 
-function fetchDataDeferred(getState, dispatch) {
-  alert('teste');
-  if (!serviceTypeIsLoaded(getState())) {
-    return dispatch(loadServiceTypes(''));
-  }
-}
-
-@connectData(null, fetchDataDeferred)
-@connect(state => ({
-  serviceTypes: state.serviceTypes.data
-}), {...serviceTypesActions})
 @reduxForm({
   form: 'service',
   fields: [
@@ -44,25 +30,12 @@ class ServiceForm extends Component {
       serviceTypes,
       resetForm
       } = this.props;
-    let listItems;
+    let options;
     if (serviceTypes) {
-      listItems = serviceTypes.map((item, index) => {
-        return (<option key={index} label={item.title}>{item.id}</option> );
+      options = serviceTypes.map((item, index) => {
+        return (<option key={index} value={item.id}>{item.title}</option> );
       });
     }
-    const renderInput = (field, label) =>
-      <div className={'form-group' + (field.error && field.touched ? ' has-error' : '')}>
-        <label htmlFor={field.name}>{label}</label>{field.error && field.touched && <span className="text-danger">{field.error}</span>}
-        <input type="text" className="form-control" id={field.name} {...field}/>
-      </div>;
-    const renderSelect = (field) =>
-      <div className="form-group">
-        <label>Tipo de serviço:</label>{field.error && field.touched && <span className="text-danger">{field.error}</span>}
-        <select className="form-control" id={field.name} {...field}>
-          <option label="Selecione..."></option>
-          {listItems}
-        </select>
-      </div>;
     return (
       <div>
         <form className="form-horizontal" onSubmit={handleSubmit}>
@@ -72,7 +45,7 @@ class ServiceForm extends Component {
           {renderInput(ledgerAccount, 'Conta contábil:')}
           {renderInput(resultAccount, 'Conta resultado:')}
           {renderInput(costAccount, 'Conta de custo:')}
-          {renderSelect(serviceType.id)}
+          {renderSelect(serviceType.id, 'Tipo de serviço:', options)}
           <div className="form-group">
             <button className="btn btn-success" onClick={handleSubmit}>
               <i className="fa fa-paper-plane"/> Salvar

@@ -1,10 +1,10 @@
 import React, {Component, PropTypes} from 'react';
-import {Grid, Row, Col, Panel, Alert, Fade} from 'react-bootstrap';
+import {Grid, Row, Col, Panel, Alert} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
 import * as serviceTypesActions from 'redux/modules/serviceTypes';
-import {ServiceTypeTableList, ServiceTypeSearchForm} from 'components';
+import {TableList, FilterInput} from 'components';
 
 
 @connect(
@@ -20,21 +20,27 @@ export default class ServiceTypes extends Component {
     loading: PropTypes.bool,
     load: PropTypes.func.isRequired,
     filter: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired
+  }
+
+  handleRemove = (id) => {
+    this.props.remove(id);
   }
 
   render() {
     const {list, loading, filter, clearErrors} = this.props;
+    const fields = [
+      ['id', 'Id'],
+      ['title', 'Nome']];
     return (
       <div className="container">
         <DocumentMeta title={config.app.title + ': Tipo de serviço'}/>
         {this.props.error &&
-          <Fade in={this.props.error}>
-            <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
-              <h4>Erro</h4>
-              <p>{this.props.error}</p>
-            </Alert>
-          </Fade>
+          <Alert bsStyle="danger" onDismiss={clearErrors} dismissAfter={2000}>
+            <h4>Erro</h4>
+            <p>{this.props.error}</p>
+          </Alert>
         }
         <Grid fluid>
           <Row>
@@ -43,12 +49,12 @@ export default class ServiceTypes extends Component {
                 <Grid fluid>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                      <ServiceTypeSearchForm onSubmit={filter} loading={loading} />
+                      <FilterInput onSubmit={filter} loading={loading} addBtnLabel="Novo tipo de serviço" addBtnRoute="/serviceTypes/add"/>
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                    {list && list.length && <ServiceTypeTableList {...this.props}/>}
+                    {list && list.length && <TableList list={list} fields={fields} onRemove={this.handleRemove}/>}
                     </Col>
                   </Row>
                 </Grid>

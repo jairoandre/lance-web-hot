@@ -2,11 +2,13 @@ import React, {Component, PropTypes} from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Input } from 'react-bootstrap';
 
-export default class ServiceTypeSearchForm extends Component {
+export default class FilterInput extends Component {
 
   static propTypes = {
     loading: PropTypes.bool,
-    onSubmit: PropTypes.func
+    onSubmit: PropTypes.func,
+    addBtnLabel: PropTypes.string,
+    addBtnRoute: PropTypes.string
   }
 
   handleClick = () => {
@@ -15,7 +17,7 @@ export default class ServiceTypeSearchForm extends Component {
   }
 
   render() {
-    const {loading} = this.props;
+    const {loading, addBtnLabel, addBtnRoute} = this.props;
     let refreshClassName = 'fa fa-refresh';
     if (loading) {
       refreshClassName += ' fa-spin';
@@ -30,9 +32,9 @@ export default class ServiceTypeSearchForm extends Component {
             <i className={refreshClassName}/> {' '} Filtrar
           </button>
           {'  '}
-          <LinkContainer to="/serviceTypes/add">
+          <LinkContainer to={addBtnRoute}>
             <button className="btn btn-primary" disabled={loading}>
-              <i className="fa fa-file"/> {' '} Novo tipo de serviço
+              <i className="fa fa-file"/> {' ' + addBtnLabel}
             </button>
           </LinkContainer>
         </div>

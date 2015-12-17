@@ -1,5 +1,13 @@
 const isEmpty = value => value === undefined || value === null || value === '';
 const join = (rules) => (value, data) => rules.map(rule => rule(value, data)).filter(error => !!error)[0 /* first error */ ];
+const interpolatedData = (data, key) => {
+  const splitedKeys = key.split('.');
+  let value = data[splitedKeys[0]];
+  for (let idx = 1; idx < splitedKeys.length; idx++) {
+    value = value[splitedKeys[idx]];
+  }
+  return value;
+};
 
 export function email(value) {
   // Let's not start a debate on email regex. This is just for an example app!
@@ -12,12 +20,6 @@ export function required(value) {
   if (isEmpty(value)) {
     return 'Requerido';
   }
-}
-
-export function deepRequired(field) {
-  return value => {
-    return required(value[field]);
-  };
 }
 
 export function minLength(min) {
@@ -65,7 +67,7 @@ export function createValidator(rules) {
     const errors = {};
     Object.keys(rules).forEach((key) => {
       const rule = join([].concat(rules[key])); // concat enables both functions and arrays of functions
-      const error = rule(data[key], data);
+      const error = rule(interpolatedData(data, key), data);
       if (error) {
         errors[key] = error;
       }
