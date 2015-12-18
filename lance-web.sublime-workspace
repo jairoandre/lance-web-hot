@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"extra",
+				"extractInfo"
+			],
+			[
+				"inter",
+				"interpolizedFields"
+			],
+			[
+				"split",
+				"splitedFields"
+			],
+			[
+				"loading",
+				"loadingServiceTypes"
+			],
+			[
 				"servi",
 				"serviceTypesActions"
 			],
@@ -51,22 +67,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/components/Service/ServiceForm.js",
-			"settings":
-			{
-				"buffer_size": 3167,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/redux/modules/serviceTypes.js",
-			"settings":
-			{
-				"buffer_size": 2938,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -134,66 +134,69 @@
 	"expanded_folders":
 	[
 		"/C/Users/jairoportela/projects/lance/lance-web",
-		"/C/Users/jairoportela/projects/lance/lance-web/api",
-		"/C/Users/jairoportela/projects/lance/lance-web/api/utils",
 		"/C/Users/jairoportela/projects/lance/lance-web/src",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/helpers",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Contract",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/theme"
+		"/C/Users/jairoportela/projects/lance/lance-web/src/utils"
 	],
 	"file_history":
 	[
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Service/ServiceNew.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/api/utils/actionHelpers.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/serviceValidation.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/utils/renders.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceForm.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/reducer.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/routes.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/utils/validation.js",
-		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceSearchForm.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Service/Service.js",
-		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript (Babel).sublime-settings",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceListHeader.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceTableList.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceListRow.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Contract/Contract.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Contract/ContractNew.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/Suppliers.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes/ServiceTypesNew.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeForm.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes/ServiceTypes.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/supplier/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/sectors.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/routes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Contract/Contract.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/contracts.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/services.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/reducer.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Contract/ContractNew.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes/ServiceTypes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/Suppliers.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/service/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeSearchForm.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/sector/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/supplier/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/contract/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Service/Service.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes/ServiceTypesNew.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/SuppliersNew.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/utils/actionHelpers.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Common/ListRow.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/serviceTypes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/suppliers.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/services.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/sectors.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Common/TableList.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/reducerHelper.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Common/FilterInput.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/serviceValidation.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/utils/validation.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Common/ListHeader.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceSearchForm.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceListHeader.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Common/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Service/ServiceNew.js",
+		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript (Babel).sublime-settings",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceTableList.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceListRow.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeSearchForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeListHeader.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/SuppliersNew.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/load.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/filter.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/serviceType/save.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/App/App.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/serviceTypeValidation.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeTableList.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierListRow.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeListRow.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/serviceTypes.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierSearchForm/SupplierSearchForm.scss",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/suppliers.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm/SupplierForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierSearchForm/SupplierSearchForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/supplier/save.js",
@@ -265,14 +268,7 @@
 		"/C/Users/jairoportela/projects/lance/lance-web/src/client/components/Layout/CoreLayout.jsx",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/client/reducers/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web-sk/src/layouts/lance.sublime-project",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/api/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/routes/Supplier.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/server.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/containers/Supplier/SupplierSearchForm.jsx",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/actions/Supplier/SupplierSearchFormActions.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/store/initialState.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/components/Supplier/SupplierListRow.jsx",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/api/serverApi.js"
+		"/C/Users/jairoportela/projects/lance/lance-web/src/client/api/index.js"
 	],
 	"find":
 	{
@@ -291,6 +287,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"replaceState",
+			"cb",
+			"saveError",
+			"Service",
+			"saveError",
+			"service",
+			"serviceType",
+			"data",
+			"SAVE",
+			"loadingSave",
+			"saveError",
+			"costAccount",
+			"listItems",
+			"index",
+			"partialId",
+			"item.id",
+			"\"",
+			"fields",
+			"i",
+			"ServiceListHeader",
+			"ServiceSearchForm",
+			"headersTH",
+			"CLEAR_ERRORS",
+			"alert",
 			"serviceType",
 			"field",
 			"Erro de comunicação com a API",
@@ -410,71 +430,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/components/Service/ServiceForm.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3167,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								555,
-								555
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 198.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/redux/modules/serviceTypes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2938,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2124,
-								2124
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -531,8 +488,60 @@
 		"selected_items":
 		[
 			[
+				"",
+				"src\\redux\\modules\\contracts.js"
+			],
+			[
+				"contract",
+				"src\\redux\\modules\\contracts.js"
+			],
+			[
+				"contract.js",
+				"src\\containers\\Contract\\Contract.js"
+			],
+			[
+				"servicetypeform",
+				"src\\components\\ServiceType\\ServiceTypeForm.js"
+			],
+			[
+				"tablelist",
+				"src\\components\\Common\\TableList.js"
+			],
+			[
+				"listrow",
+				"src\\components\\Common\\ListRow.js"
+			],
+			[
 				"servicetypes.js",
 				"src\\redux\\modules\\serviceTypes.js"
+			],
+			[
+				"servicetypes",
+				"src\\redux\\modules\\serviceTypes.js"
+			],
+			[
+				"filter",
+				"src\\components\\Common\\FilterInput.js"
+			],
+			[
+				"tableli",
+				"src\\components\\Common\\TableList.js"
+			],
+			[
+				"servicetype",
+				"src\\redux\\modules\\serviceTypes.js"
+			],
+			[
+				"renders",
+				"src\\utils\\renders.js"
+			],
+			[
+				"table",
+				"src\\components\\Common\\TableList.js"
+			],
+			[
+				"serviceserachfo",
+				"src\\components\\Service\\ServiceSearchForm.js"
 			],
 			[
 				"serviceform",

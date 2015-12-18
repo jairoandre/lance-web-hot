@@ -20,3 +20,16 @@ export function renderSelect(field, label, options) {
     </div>
   );
 }
+
+export function renderFormBtns(handleSubmit, resetForm) {
+  return (
+    <div className="form-group">
+      <button className="btn btn-primary" onClick={handleSubmit}>
+        <i className="fa fa-paper-plane"/> Salvar
+      </button>
+      <button className="btn btn-warning" onClick={resetForm} style={{marginLeft: 5}}>
+        <i className="fa fa-undo"/> Resetar
+      </button>
+    </div>
+  );
+}

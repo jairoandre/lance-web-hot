@@ -4,8 +4,8 @@ import { isLoaded as isAuthLoaded, load as loadAuth } from 'redux/modules/auth';
 import {
     App,
     About,
+    Home,
     Login,
-    LoginSuccess,
     Suppliers,
     SuppliersNew,
     ServiceTypes,
@@ -18,14 +18,14 @@ import {
   } from 'containers';
 
 export default (store) => {
-  const requireLogin = (nextState, replaceState, cb) => {
+  const requireLogin = (nextState, pushState, callback) => {
     function checkAuth() {
       const { auth: { user }} = store.getState();
       if (!user) {
         // oops, not logged in, so can't be here!
-        replaceState(null, 'login');
+        pushState(null, '/login');
       }
-      cb();
+      callback();
     }
 
     if (!isAuthLoaded(store.getState())) {
@@ -41,12 +41,12 @@ export default (store) => {
   return (
     <Route path="/" component={App}>
       { /* Home (main) route */ }
-      <IndexRoute component={Login}/>
+      <IndexRoute component={Home}/>
 
       { /* Routes requiring login */ }
       <Route onEnter={requireLogin}>
+        <Route path="home" component={Home}/>
         <Route path="about" component={About}/>
-        <Route path="loginSuccess" component={LoginSuccess}/>
         <Route path="suppliers" component={Suppliers}/>
         <Route path="suppliers/add" component={SuppliersNew}/>
         <Route path="serviceTypes" component={ServiceTypes}/>

@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import serviceValidation from './serviceValidation';
-import {renderInput, renderSelect} from 'utils/renders';
+import {renderInput, renderSelect, renderFormBtns} from 'utils/renders';
 
 @reduxForm({
   form: 'service',
@@ -46,14 +46,7 @@ class ServiceForm extends Component {
           {renderInput(resultAccount, 'Conta resultado:')}
           {renderInput(costAccount, 'Conta de custo:')}
           {renderSelect(serviceType.id, 'Tipo de serviço:', options)}
-          <div className="form-group">
-            <button className="btn btn-success" onClick={handleSubmit}>
-              <i className="fa fa-paper-plane"/> Salvar
-            </button>
-            <button className="btn btn-warning" onClick={resetForm} style={{marginLeft: 5}}>
-              <i className="fa fa-undo"/> Resetar
-            </button>
-          </div>
+          {renderFormBtns(handleSubmit, resetForm)}
         </form>
       </div>
     );
