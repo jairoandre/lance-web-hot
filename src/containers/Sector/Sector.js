@@ -3,17 +3,17 @@ import {Grid, Row, Col, Panel, Alert} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
-import * as contracts from 'redux/modules/contracts';
+import * as sectors from 'redux/modules/sectors';
 import {TableList, FilterInput} from 'components';
 
 
 @connect(
   state => ({
-    list: state.contracts.data,
-    error: state.contracts.error,
-    loading: state.contracts.loading,
-  }), {...contracts})
-export default class Contract extends Component {
+    list: state.sectors.data,
+    error: state.sectors.error,
+    loading: state.sectors.loading,
+  }), {...sectors})
+export default class Sector extends Component {
   static propTypes = {
     list: PropTypes.array,
     error: PropTypes.string,
@@ -48,11 +48,11 @@ export default class Contract extends Component {
         <Grid fluid>
           <Row>
             <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-              <Panel header="Contrato" bsStyle="primary">
+              <Panel header="Setor" bsStyle="primary">
                 <Grid fluid>
                   <Row>
                     <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
-                      <FilterInput onSubmit={filter} loading={loading} addBtnLabel="Novo contrato" addBtnRoute="/contracts/add"/>
+                      <FilterInput onSubmit={filter} loading={loading} addBtnLabel="Novo setor" addBtnRoute="/sectors/add"/>
                     </Col>
                   </Row>
                   <Row>

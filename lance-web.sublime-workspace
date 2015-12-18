@@ -67,6 +67,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "webpack/dev.config.js",
+			"settings":
+			{
+				"buffer_size": 3881,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -134,18 +142,26 @@
 	"expanded_folders":
 	[
 		"/C/Users/jairoportela/projects/lance/lance-web",
-		"/C/Users/jairoportela/projects/lance/lance-web/src",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Contract",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/utils"
+		"/C/Users/jairoportela/projects/lance/lance-web/api/actions",
+		"/C/Users/jairoportela/projects/lance/lance-web/api/utils",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Sector",
+		"/C/Users/jairoportela/projects/lance/lance-web/webpack"
 	],
 	"file_history":
 	[
+		"/C/Users/jairoportela/Desktop/OLD-LANCE-SCHEMA.SQL",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/index.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Login/Login.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Sector/SectorNew.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Sector/Sector.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/routes.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Home/Home.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Service/ServiceNew.js",
+		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/NotFound/NotFound.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/utils/renders.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/ServiceType/ServiceTypeForm.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/routes.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Contract/Contract.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/redux/modules/contracts.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/index.js",
@@ -158,7 +174,6 @@
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/supplier/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/actions/contract/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Service/Service.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/ServiceTypes/ServiceTypesNew.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Suppliers/SuppliersNew.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/api/utils/actionHelpers.js",
@@ -181,7 +196,6 @@
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceListHeader.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Common/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Service/ServiceNew.js",
 		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/jairoportela/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript (Babel).sublime-settings",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Service/ServiceTableList.js",
@@ -205,7 +219,6 @@
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Home/Home.scss",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/App/App.scss",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Survey/Survey.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Home/Home.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/InputReduxForm/InputReduxForm.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/components/Supplier/SupplierForm",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/theme/common.scss",
@@ -263,12 +276,7 @@
 		"/C/Users/jairoportela/projects/lance/lance-web/package.json",
 		"/C/Users/jairoportela/projects/lance/lance-web/.structor/src/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/client/actions/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/routes/MainPage.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/routes/routes.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/components/Layout/CoreLayout.jsx",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/reducers/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web-sk/src/layouts/lance.sublime-project",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/api/index.js"
+		"/C/Users/jairoportela/projects/lance/lance-web/src/client/routes/MainPage.js"
 	],
 	"find":
 	{
@@ -287,6 +295,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"contract",
+			"Contract",
+			"contract",
+			"contrato",
+			"contracts",
 			"replaceState",
 			"cb",
 			"saveError",
@@ -409,10 +422,7 @@
 			");\n",
 			"readData",
 			"\"\n",
-			"selectType",
-			"contrato",
-			" ",
-			"                  "
+			"selectType"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -430,8 +440,40 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "webpack/dev.config.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								340
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

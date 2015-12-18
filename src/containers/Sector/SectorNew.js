@@ -38,8 +38,8 @@ export default class SectorNew extends Component {
             <Row>
               <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
                 <SectorForm onSubmit={this.handleSubmit}/>
-              </Col>
-            </Row>
+              </Col
+>            </Row>
           </Grid>
         </Panel>
       </div>
