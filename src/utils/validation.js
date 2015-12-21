@@ -1,13 +1,5 @@
 const isEmpty = value => value === undefined || value === null || value === '';
 const join = (rules) => (value, data) => rules.map(rule => rule(value, data)).filter(error => !!error)[0 /* first error */ ];
-const interpolatedData = (data, key) => {
-  const splitedKeys = key.split('.');
-  let value = data[splitedKeys[0]];
-  for (let idx = 1; idx < splitedKeys.length; idx++) {
-    value = value[splitedKeys[idx]];
-  }
-  return value;
-};
 
 export function email(value) {
   // Let's not start a debate on email regex. This is just for an example app!
@@ -56,20 +48,30 @@ export function match(field) {
   return (value, data) => {
     if (data) {
       if (value !== data[field]) {
-        return 'Do not match';
+        return 'Diferentes';
       }
     }
   };
 }
 
+// TODO: Melhorar o deep validation
 export function createValidator(rules) {
   return (data = {}) => {
     const errors = {};
     Object.keys(rules).forEach((key) => {
       const rule = join([].concat(rules[key])); // concat enables both functions and arrays of functions
-      const error = rule(interpolatedData(data, key), data);
-      if (error) {
-        errors[key] = error;
+      const splitedKeys = key.split('.');
+      if (splitedKeys.length === 1) {
+        const error = rule(data[key], data);
+        if (error) {
+          errors[key] = error;
+        }
+      } else if (splitedKeys.length === 2) {
+        const error = rule(data[splitedKeys[0]][splitedKeys[1]], data);
+        if (error) {
+          errors[splitedKeys[0]] = [];
+          errors[splitedKeys[0]][splitedKeys[1]] = error;
+        }
       }
     });
     return errors;

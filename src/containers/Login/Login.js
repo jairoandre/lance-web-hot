@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-import { Input, Fade } from 'react-bootstrap';
+import { Input } from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
 import * as authActions from 'redux/modules/auth';
 import config from '../../config';
@@ -32,26 +32,23 @@ export default class Login extends Component {
     if (loading) {
       refreshClassName = 'fa fa-refresh fa-spin';
     }
-    const fadeIn = true;
     return (
-      <Fade in={fadeIn} timeout="1000">
-        <div className={styles.loginContainer}>
-          <DocumentMeta title={config.app.title + ': Login'}/>
-          <div className={styles.logo}>
-            <img src={logoImage}/>
-            <p>Sistema Lance</p>
-          </div>
-          <hr/>
-          <div>
-            <form className="login-form form-group" onSubmit={this.handleSubmit}>
-              <Input type="text" disabled={loading} label="Usuário" groupClassName="group-class" labelClassName="label-class" ref="username" placeholder="Digite seu nome de usuário"/>
-              <Input type="password" disabled={loading} label="Senha" groupClassName="group-class" labelClassName="label-class" ref="password" placeholder="Digite sua senha"/>
-              <button className="btn btn-success btn-block" disabled={loading} onClick={this.handleSubmit}><i className={refreshClassName}/>{' '}Entrar
-              </button>
-            </form>
-          </div>
+      <div className={styles.loginContainer}>
+        <DocumentMeta title={config.app.title + ': Login'}/>
+        <div className={styles.logo}>
+          <img src={logoImage}/>
+          <p>Sistema Lance</p>
         </div>
-      </Fade>
+        <hr/>
+        <div>
+          <form className="login-form form-group" onSubmit={this.handleSubmit}>
+            <Input type="text" disabled={loading} label="Usuário" groupClassName="group-class" labelClassName="label-class" ref="username" placeholder="Digite seu nome de usuário"/>
+            <Input type="password" disabled={loading} label="Senha" groupClassName="group-class" labelClassName="label-class" ref="password" placeholder="Digite sua senha"/>
+            <button className="btn btn-success btn-block" disabled={loading} onClick={this.handleSubmit}><i className={refreshClassName}/>{' '}Entrar
+            </button>
+          </form>
+        </div>
+      </div>
     );
   }
 }

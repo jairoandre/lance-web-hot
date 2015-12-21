@@ -67,14 +67,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "webpack/dev.config.js",
-			"settings":
-			{
-				"buffer_size": 3881,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -141,14 +133,11 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/jairoportela/projects/lance/lance-web",
-		"/C/Users/jairoportela/projects/lance/lance-web/api/actions",
-		"/C/Users/jairoportela/projects/lance/lance-web/api/utils",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Sector",
-		"/C/Users/jairoportela/projects/lance/lance-web/webpack"
+		"/C/Users/jairoportela/projects/lance/lance-web"
 	],
 	"file_history":
 	[
+		"/C/Users/jairoportela/projects/lance/lance-web/db.sql",
 		"/C/Users/jairoportela/Desktop/OLD-LANCE-SCHEMA.SQL",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/index.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/src/containers/Login/Login.js",
@@ -275,8 +264,7 @@
 		"/C/Users/jairoportela/projects/lance/lance-web-hot/src/config.js",
 		"/C/Users/jairoportela/projects/lance/lance-web/package.json",
 		"/C/Users/jairoportela/projects/lance/lance-web/.structor/src/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/actions/index.js",
-		"/C/Users/jairoportela/projects/lance/lance-web/src/client/routes/MainPage.js"
+		"/C/Users/jairoportela/projects/lance/lance-web/src/client/actions/index.js"
 	],
 	"find":
 	{
@@ -440,40 +428,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "webpack/dev.config.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3881,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								347,
-								340
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Phoenix.tmTheme",
-							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
