@@ -6,7 +6,7 @@ import config from '../../config';
 import {initialize} from 'redux-form';
 import {pushState} from 'redux-router';
 import {save} from 'redux/modules/sectors';
-import {ContractForm} from 'components';
+import {SectorForm} from 'components';
 
 @connect(state => ({
   error: state.sectors.error,
@@ -32,14 +32,14 @@ export default class SectorNew extends Component {
   render() {
     return (
       <div className="container">
-        <DocumentMeta title={config.app.title + ': Novo sector'}/>
-        <Panel header="Novo sector" bsStyle="primary">
+        <DocumentMeta title={config.app.title + ': Novo setor'}/>
+        <Panel header="Novo setor" bsStyle="primary">
           <Grid fluid>
             <Row>
               <Col xs={ 12 } md={ 12 } sm={ 12 } lg={ 12 }>
                 <SectorForm onSubmit={this.handleSubmit}/>
-              </Col
->            </Row>
+              </Col>
+            </Row>
           </Grid>
         </Panel>
       </div>

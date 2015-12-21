@@ -119,7 +119,7 @@ export function isLoaded(globalState) {
 export function filter(term) {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.post('/sector/filter/', {data: {title: term}}) // params not used, just shown as demonstration
+    promise: (client) => client.post('/sector/filter/', {data: {name: term}}) // params not used, just shown as demonstration
   };
 }
 

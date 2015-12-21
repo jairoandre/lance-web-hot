@@ -27,7 +27,7 @@ class SupplierForm extends Component {
         <form className="form-horizontal" onSubmit={handleSubmit}>
           {renderInput(title, 'Descrição:')}
           {renderInput(supplierCode, 'Código de fornecedor:')}
-          {renderFormBtns(handleSubmit, resetForm)}
+          {renderFormBtns(handleSubmit, resetForm, '/suppliers')}
         </form>
       </div>
     );

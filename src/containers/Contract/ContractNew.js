@@ -23,10 +23,10 @@ export default class ContractNew extends Component {
 
   handleSubmit = (data) => {
     this.props.save(data);
-    this.props.initialize('contract', {});
     if (this.props.error) {
       console.log(this.props.error);
     } else {
+      this.props.initialize('contract', {});
       this.props.pushState(null, '/contracts');
     }
   }

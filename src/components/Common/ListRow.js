@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Modal, Tooltip, OverlayTrigger, Alert, Button } from 'react-bootstrap';
 
 export default class ListRow extends Component {
 
@@ -15,6 +15,14 @@ export default class ListRow extends Component {
     super(props, content);
   }
 
+  state = {
+    showDeleteConfirmDialog: false
+  }
+
+  toggleDeleteConfirmDialog = () => {
+    this.setState({showDeleteConfirmDialog: !this.state.showDeleteConfirmDialog});
+  }
+
   handleDetail = () => {
     this.props.onDetail({id: this.props.id});
   }
@@ -25,9 +33,11 @@ export default class ListRow extends Component {
 
   handleRemove = () => {
     this.props.onRemove(this.props.id);
+    this.toggleDeleteConfirmDialog();
   }
 
   render() {
+    const {showDeleteConfirmDialog} = this.state;
     const {id, fields} = this.props;
     const styles = require('theme/common.scss');
     const detailTooltip = <Tooltip id={'detailTooltip_' + id}><strong>Detalhar</strong></Tooltip>;
@@ -57,10 +67,25 @@ export default class ListRow extends Component {
             </a>
           </OverlayTrigger>
           <OverlayTrigger placement="bottom" overlay={deleteTooltip}>
-            <a href="#" onClick={this.handleRemove}>
+            <a href="#" onClick={this.toggleDeleteConfirmDialog}>
              <i className="fa fa-trash" ></i>
             </a>
           </OverlayTrigger>
+          <Modal show={showDeleteConfirmDialog}>
+            <Modal.Header>
+              <Modal.Title bsStyle="danger">Excluir registro</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Alert bsStyle="danger">
+                <h4>Atenção!</h4>
+                <p>Deseja realmente excluir o item?</p>
+              </Alert>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button bsStyle="danger" onClick={this.handleRemove}>Excluir</Button>
+              <Button bsStyle="warning" styles={{marginLeft: '5px'}} onClick={this.toggleDeleteConfirmDialog}>Cancelar</Button>
+            </Modal.Footer>
+          </Modal>
         </td>
       </tr>
     );

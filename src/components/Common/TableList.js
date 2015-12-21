@@ -5,8 +5,8 @@ import { ListHeader, ListRow } from './';
 export default class TableList extends Component {
 
   static propTypes = {
-    list: PropTypes.array.isRequired,
     fields: PropTypes.array.isRequired,
+    list: PropTypes.array,
     onDetail: PropTypes.func,
     onEdit: PropTypes.func,
     onRemove: PropTypes.func

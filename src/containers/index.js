@@ -10,4 +10,6 @@ export Service from './Service/Service';
 export ServiceNew from './Service/ServiceNew';
 export Contract from './Contract/Contract';
 export ContractNew from './Contract/ContractNew';
+export Sector from './Sector/Sector';
+export SectorNew from './Sector/SectorNew';
 export NotFound from './NotFound/NotFound';

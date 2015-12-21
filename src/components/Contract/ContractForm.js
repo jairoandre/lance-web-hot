@@ -1,45 +1,45 @@
 import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
-import serviceValidation from './serviceValidation';
+import contractValidation from './contractValidation';
 import {renderInput, renderSelect, renderFormBtns} from 'utils/renders';
 
 @reduxForm({
   form: 'service',
   fields: [
     'title',
-    'defaultHistory',
-    'documentType',
-    'ledgerAccount',
-    'resultAccount',
-    'costAccount',
-    'serviceType.id'],
-  validate: serviceValidation
+    'finalDate',
+    'beginDate',
+    'changeDate',
+    'supplier.id',
+    'service.id'],
+  validate: contractValidation
 })
 export default
 class ServiceForm extends Component {
   static propTypes = {
-    serviceTypes: PropTypes.array,
+    suppliers: PropTypes.array,
+    services: PropTypes.array,
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     resetForm: PropTypes.func.isRequired
   }
   render() {
     const {
-      fields: {title, defaultHistory, documentType, ledgerAccount, resultAccount, costAccount, serviceType},
+      fields: {title, finalDate, beginDate, changeDate, supplier, service},
       handleSubmit,
-      serviceTypes,
+      suppliers,
+      services,
       resetForm
       } = this.props;
     return (
       <div>
         <form className="form-horizontal" onSubmit={handleSubmit}>
           {renderInput(title, 'Nome do serviço:')}
-          {renderInput(defaultHistory, 'Histórico padrão:')}
-          {renderInput(documentType, 'Tipo do documento:')}
-          {renderInput(ledgerAccount, 'Conta contábil:')}
-          {renderInput(resultAccount, 'Conta resultado:')}
-          {renderInput(costAccount, 'Conta de custo:')}
-          {renderSelect(serviceType.id, 'Tipo de serviço:', serviceTypes, 'id', 'title')}
+          {renderInput(beginDate, 'Data de início:')}
+          {renderInput(finalDate, 'Data de término:')}
+          {renderInput(changeDate, 'Data de reajuste:')}
+          {renderSelect(supplier.id, 'Cliente:', suppliers, 'id', 'title')}
+          {renderSelect(service.id, 'Serviço:', services, 'id', 'title')}
           {renderFormBtns(handleSubmit, resetForm, '/services')}
         </form>
       </div>
