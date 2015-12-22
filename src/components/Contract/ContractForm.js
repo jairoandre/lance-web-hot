@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import contractValidation from './contractValidation';
 import {renderInput, renderSelect, renderFormBtns} from 'utils/renders';
+import {ObjectSelect, DateInput} from 'components';
 
 @reduxForm({
   form: 'service',
@@ -11,36 +12,36 @@ import {renderInput, renderSelect, renderFormBtns} from 'utils/renders';
     'beginDate',
     'changeDate',
     'supplier.id',
-    'service.id'],
+    'services'],
   validate: contractValidation
 })
 export default
-class ServiceForm extends Component {
+class ContractForm extends Component {
   static propTypes = {
-    suppliers: PropTypes.array,
-    services: PropTypes.array,
+    supplierOptions: PropTypes.array,
+    serviceOptions: PropTypes.array,
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     resetForm: PropTypes.func.isRequired
   }
   render() {
     const {
-      fields: {title, finalDate, beginDate, changeDate, supplier, service},
+      fields: {title, finalDate, beginDate, changeDate, supplier, services},
       handleSubmit,
-      suppliers,
-      services,
+      supplierOptions,
+      serviceOptions,
       resetForm
       } = this.props;
     return (
       <div>
         <form className="form-horizontal" onSubmit={handleSubmit}>
           {renderInput(title, 'Nome do serviço:')}
-          {renderInput(beginDate, 'Data de início:')}
-          {renderInput(finalDate, 'Data de término:')}
-          {renderInput(changeDate, 'Data de reajuste:')}
-          {renderSelect(supplier.id, 'Cliente:', suppliers, 'id', 'title')}
-          {renderSelect(service.id, 'Serviço:', services, 'id', 'title')}
-          {renderFormBtns(handleSubmit, resetForm, '/services')}
+          <DateInput label="Data de início" {...beginDate} />
+          <DateInput label="Data de término" {...finalDate} />
+          <DateInput label="Data de reajuste" {...changeDate} />
+          {renderSelect(supplier.id, 'Cliente:', supplierOptions, 'id', 'title')}
+          <ObjectSelect multiple label="Serviços:" options={serviceOptions.map((item) => {return {id: item.id, label: item.title};})} {...services}/>
+          {renderFormBtns(handleSubmit, resetForm, '/contracts')}
         </form>
       </div>
     );
