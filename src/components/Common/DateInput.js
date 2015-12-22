@@ -29,23 +29,24 @@ export default class DateInput extends Component {
       borderRadius: 3,
       marginLeft: -5,
       marginTop: 5,
-      padding: 10,
-      zIndex: 999
+      padding: 10
     };
     return (
       <div className={'form-group' + (error && touched ? ' has-error' : '')}>
         <label className="control-label" htmlFor={name}>{label}</label>
         {error && touched && <span className="text-danger">{error}</span>}
-        <OverlayTrigger
-          trigger="focus"
-          rootClose
-          placement="bottom"
-          overlay={
-            <div style={style}>
-              <Calendar onChange={handleSelect} />
-            </div>}>
+        <div className="input-group">
           <input type="text" className="form-control" id={name} {...rest}/>
-        </OverlayTrigger>
+          <span className="input-group-btn">
+            <OverlayTrigger
+            trigger="click"
+            rootClose
+            placement="bottom"
+            overlay={<div style={style}><Calendar onChange={handleSelect} /></div>}>
+              <button className="btn btn-secondary" type="button"><i className="fa fa-calendar"/></button>
+            </OverlayTrigger>
+          </span>
+        </div>
       </div>
     );
   }

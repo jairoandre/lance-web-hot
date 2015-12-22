@@ -36,9 +36,9 @@ class ContractForm extends Component {
       <div>
         <form className="form-horizontal" onSubmit={handleSubmit}>
           {renderInput(title, 'Nome do serviço:')}
-          <DateInput label="Data de início" {...beginDate} />
-          <DateInput label="Data de término" {...finalDate} />
-          <DateInput label="Data de reajuste" {...changeDate} />
+          <DateInput label="Data de início:" {...beginDate} />
+          <DateInput label="Data de término:" {...finalDate} />
+          <DateInput label="Data de reajuste:" {...changeDate} />
           {renderSelect(supplier.id, 'Cliente:', supplierOptions, 'id', 'title')}
           <ObjectSelect multiple label="Serviços:" options={serviceOptions.map((item) => {return {id: item.id, label: item.title};})} {...services}/>
           {renderFormBtns(handleSubmit, resetForm, '/contracts')}
