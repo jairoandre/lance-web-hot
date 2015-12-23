@@ -34,7 +34,7 @@ export default class Contract extends Component {
       ['id', 'Id'],
       ['title', 'Descrição'],
       ['beginDate', 'Data de início'],
-      ['finalDate', 'Data de término'],
+      ['endDate', 'Data de término'],
       ['changeDate', 'Data de reajuste']];
     return (
       <div className="container">

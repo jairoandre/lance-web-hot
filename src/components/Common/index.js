@@ -4,4 +4,4 @@ export TableList from './TableList';
 export FilterInput from './FilterInput';
 export ModalError from './ModalError';
 export ObjectSelect from './ObjectSelect';
-export DateInput from './DateInput';
+export MultiInput from './MultiInput';

@@ -37,6 +37,7 @@ export default class ContractNew extends Component {
   }
 
   handleSubmit = (data) => {
+    console.log(JSON.stringify(data));
     this.props.save(data);
     if (this.props.error) {
       console.log(this.props.error);

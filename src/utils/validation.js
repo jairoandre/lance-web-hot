@@ -1,4 +1,4 @@
-const isEmpty = value => value === undefined || value === null || value === '';
+const isEmpty = value => value === undefined || value === null || value === '' || value.length === 0;
 const join = (rules) => (value, data) => rules.map(rule => rule(value, data)).filter(error => !!error)[0 /* first error */ ];
 
 export function email(value) {

@@ -20,7 +20,7 @@ export default class ModalError extends Component {
       this.setState({showModal: !this.state.showModal});
     };
     return (
-      <Modal show={showModal}>
+      <Modal show={showModal} onHide={onHide}>
         <Modal.Header>
           <Modal.Title bsStyle="danger">Erro</Modal.Title>
         </Modal.Header>

@@ -7,8 +7,9 @@ import React, {Component, PropTypes} from 'react';
 export default class ObjectSelect extends Component {
   static propTypes = {
     multiple: PropTypes.bool,
-    onBlur: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
+    emptyOption: PropTypes.bool,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       label: PropTypes.string.isRequired
@@ -21,7 +22,7 @@ export default class ObjectSelect extends Component {
   }
 
   render() {
-    const {multiple, onBlur, onChange, options, value, label, name, error, touched, ...rest} = this.props;
+    const {multiple, emptyOption, onBlur, onChange, options, value, label, name, error, touched, ...rest} = this.props;
     const parse = event => {
       if (multiple) {
         const result = [];
@@ -47,8 +48,9 @@ export default class ObjectSelect extends Component {
           onChange={event => onChange(parse(event))}
           value={multiple && value ? value.map(JSON.stringify) : JSON.stringify(value)}
           {...rest}>
+            {emptyOption && <option value="">Selecione...</option>}
             {options.map(option =>
-              <option key={option.id} value={JSON.stringify(option)}>{option.label}</option>)}
+              <option key={option.id} value={JSON.stringify({id: option.id})}>{option.label}</option>)}
         </select>
       </div>
     );
