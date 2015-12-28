@@ -16,6 +16,7 @@ import {
     ContractNew,
     Sector,
     SectorNew,
+    SectorEdit,
     NotFound,
   } from 'containers';
 
@@ -59,6 +60,7 @@ export default (store) => {
         <Route path="contracts/add" component={ContractNew}/>
         <Route path="sectors" component={Sector}/>
         <Route path="sectors/add" component={SectorNew}/>
+        <Route path="sectors/edit" component={SectorEdit}/>
       </Route>
 
       { /* Routes */ }

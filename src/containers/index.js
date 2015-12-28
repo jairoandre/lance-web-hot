@@ -12,4 +12,5 @@ export Contract from './Contract/Contract';
 export ContractNew from './Contract/ContractNew';
 export Sector from './Sector/Sector';
 export SectorNew from './Sector/SectorNew';
+export SectorEdit from './Sector/SectorEdit';
 export NotFound from './NotFound/NotFound';

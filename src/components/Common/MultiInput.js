@@ -2,7 +2,6 @@ import React, {Component, PropTypes} from 'react';
 import {OverlayTrigger} from 'react-bootstrap';
 import {Calendar} from 'react-date-range';
 import CurrencyMaskedInput from 'react-currency-masked-input';
-import MaskedInput from 'react-maskedinput';
 
 /**
  * Serializes and deserializes complex values to and from JSON
@@ -42,7 +41,7 @@ export default class MultiInput extends Component {
         <label className="control-label" htmlFor={name}>{label}</label>
         {this.props.error && this.props.touched && <span className="text-danger">{this.props.error}</span>}
         {!isCurrency && !mask && <input id={this.props.name} type="text" className="form-control" {...this.props}/>}
-        {!isCurrency && mask && <MaskedInput id={this.props.name} mask={mask} className="form-control" {...this.props}/>}
+        {!isCurrency && mask && <input id={this.props.name} mask={mask} className="form-control" {...this.props}/>}
         {isCurrency && <CurrencyMaskedInput id={this.props.name} className="form-control" {...this.props}/>}
         {isDate &&
           <OverlayTrigger

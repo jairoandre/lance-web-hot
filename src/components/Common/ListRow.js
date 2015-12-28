@@ -28,7 +28,7 @@ export default class ListRow extends Component {
   }
 
   handleEdit = () => {
-    this.props.onEdit({id: this.props.id});
+    this.props.onEdit(this.props.id);
   }
 
   handleRemove = () => {
@@ -71,7 +71,7 @@ export default class ListRow extends Component {
              <i className="fa fa-trash" ></i>
             </a>
           </OverlayTrigger>
-          <Modal show={showDeleteConfirmDialog}>
+          <Modal show={showDeleteConfirmDialog} onHide={()=>{}}>
             <Modal.Header>
               <Modal.Title bsStyle="danger">Excluir registro</Modal.Title>
             </Modal.Header>

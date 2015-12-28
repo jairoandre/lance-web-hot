@@ -1,7 +1,8 @@
-import React, {Component, PropTypes} from 'react';
-import {reduxForm} from 'redux-form';
+import React, { Component, PropTypes } from 'react';
+import { reduxForm } from 'redux-form';
 import sectorValidation from './sectorValidation';
-import {renderInput, renderFormBtns} from 'utils/renders';
+import { renderFormBtns } from 'utils/renders';
+import { MultiInput } from 'components';
 
 @reduxForm({
   form: 'sector',
@@ -27,9 +28,9 @@ class SectorForm extends Component {
     return (
       <div>
         <form className="form-horizontal" onSubmit={handleSubmit}>
-          {renderInput(name, 'Nome:')}
-          {renderInput(details, 'Detalhes:')}
-          {renderInput(area, 'Área:')}
+          <MultiInput label="Nome:" {...name} />
+          <MultiInput label="Detalhes:" {...details} />
+          <MultiInput label="Área:" {...area} />
           {renderFormBtns(handleSubmit, resetForm, '/sectors')}
         </form>
       </div>

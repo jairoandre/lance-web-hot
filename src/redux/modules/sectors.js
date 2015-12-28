@@ -43,9 +43,8 @@ export default function reducer(state = initialState, action = {}) {
     case EDIT_START:
       return {
         ...state,
-        editing: {
-          ...state.editing,
-          [action.id]: true
+        sector: {
+          name: 'Teste from reducer ' + action.id
         }
       };
     case EDIT_STOP:
